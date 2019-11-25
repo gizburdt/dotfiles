@@ -30,10 +30,10 @@ If you did all of the above you may now follow these install instructions to set
 
 ### After (Needs Automation)
 
-There are some thing we have to set manually:
+Unfortunately, there are still some things we have to set manually:
 
 **CLI:**
-- [ ] Mackup (restore/backup)
+- [ ] Mackup (restore)
 
 **Desktop:**
 - [ ] Wallpaper
