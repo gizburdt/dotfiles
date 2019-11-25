@@ -1,0 +1,43 @@
+# General
+alias cpssh="pbcopy < $HOME/.ssh/id_rsa.pub"
+alias fcli="source $HOME/.zshrc"
+alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
+# Short
+alias a='php artisan'
+alias c='composer'
+alias g='gulp'
+alias n='npm'
+
+# Laravel
+alias amr='php artisan migrate:refresh'
+alias ams='php artisan migrate --seed'
+alias amrs='php artisan migrate:refresh --seed'
+alias amf='php artisan migrate:fresh'
+alias amfs='php artisan migrate:fresh --seed'
+alias arl='php artisan route:list'
+alias dusk='php artisan dusk'
+
+# Composer
+alias cda='composer dump-autoload -o'
+alias ci='composer install --ignore-platform-reqs'
+alias cu='composer update --ignore-platform-reqs'
+alias cf="rm -rf vendor/ composer.lock && composer install --ignore-platform-reqs"
+
+# NPM
+alias ni='npm install'
+alias nrw='npm run watch'
+alias nrd='npm run dev'
+alias nrp='npm run production'
+alias nrs='npm run start'
+alias nrsd='npm run start:dev'
+alias nf="rm -rf node_modules/ package-lock.json && npm install"
+
+# Vagrant
+alias vu='vagrant up'
+
+# PHPUnit
+alias pu='./vendor/bin/phpunit'
+
+# Fun
+weather() { curl -4 wttr.in/${1:-steenwijk} }
