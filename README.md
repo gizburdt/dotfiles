@@ -65,6 +65,9 @@ Unfortunately, there are still some things we have to set manually:
 - [ ] Show Week Numbers
 - [ ] Show Birthdays
 
+**Reminders:**
+- [ ] Notifications for today (time)
+
 **Contacts**
 - [ ] Disable Siri Suggestions
 
