@@ -43,10 +43,6 @@ Unfortunately, there are still some things we have to set manually:
 - [ ] Hide User
 - [ ] Show Icons (Bluetooth, Time Machine, ...)
 
-**Finder:**
-- [ ] Toolbar
-- [ ] Sidebar
-
 **System:**
 - [ ] Trackpad Gestures
 - [ ] Display Resolution
@@ -54,11 +50,19 @@ Unfortunately, there are still some things we have to set manually:
 - [ ] Enable Night Shift
 - [ ] Install aptX
 
-**FaceTime:**
-- [ ] Disable Calling
-
 **Spotlight:**
 - [ ] Hide Suggestions
+
+**Notifications:**
+- [ ] Preferences
+- [ ] Widgets (Notifications Center)
+
+**Finder:**
+- [ ] Toolbar
+- [ ] Sidebar
+
+**FaceTime:**
+- [ ] Disable Calling
 
 **Calendar:**
 - [ ] Default Calendar
@@ -70,10 +74,6 @@ Unfortunately, there are still some things we have to set manually:
 
 **Contacts**
 - [ ] Disable Siri Suggestions
-
-**Notifications:**
-- [ ] Preferences
-- [ ] Widgets (Notifications Center)
 
 **Time Machine:**
 - [ ] Setup
