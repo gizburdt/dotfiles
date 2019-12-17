@@ -39,5 +39,20 @@ alias vu='vagrant up'
 # PHPUnit
 alias pu='./vendor/bin/phpunit'
 
-# Fun
+# Weather
 weather() { curl -4 wttr.in/${1:-steenwijk} }
+
+# PHP (valet)
+phpv() {
+    valet stop
+    brew unlink php@7.2 php@7.3
+    brew link --force --overwrite $1
+    brew services start $1
+    composer global update
+    rm -f ~/.config/valet/valet.sock
+    valet install
+}
+
+alias php72="phpv php@7.2"
+alias php73="phpv php@7.3"
+alias php74="phpv php"
