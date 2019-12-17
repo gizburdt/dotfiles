@@ -42,7 +42,7 @@ alias pu='./vendor/bin/phpunit'
 # Weather
 weather() { curl -4 wttr.in/${1:-steenwijk} }
 
-# PHP (valet)
+# PHP
 phpv() {
     valet stop
     brew unlink php@7.2 php@7.3
