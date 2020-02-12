@@ -4,6 +4,7 @@ tap 'homebrew/cask-eid'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
+tap 'exolnet/homebrew-deprecated'
 
 # Binaries
 brew 'awscli'
@@ -26,6 +27,7 @@ brew 'zsh-completions'
 
 # Development
 brew 'php'
+brew 'php@5.6'
 brew 'php@7.2'
 brew 'php@7.3'
 brew 'mysql@5.7'

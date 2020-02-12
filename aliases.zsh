@@ -50,7 +50,7 @@ weather() { curl -4 wttr.in/${1:-steenwijk} }
 # PHP
 phpv() {
     valet stop
-    brew unlink php@7.2 php@7.3
+    brew unlink php@5.6 php@7.2 php@7.3
     brew link --force --overwrite $1
     brew services start $1
     composer global update
@@ -58,6 +58,7 @@ phpv() {
     valet install
 }
 
+alias php56="phpv php@5.6"
 alias php72="phpv php@7.2"
 alias php73="phpv php@7.3"
 alias php74="phpv php"
