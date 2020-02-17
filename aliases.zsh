@@ -22,6 +22,7 @@ alias dusk="php artisan dusk"
 alias cda="composer dump-autoload -o"
 alias ci="composer install --ignore-platform-reqs"
 alias cu="composer update --ignore-platform-reqs"
+alias ct="composer test"
 alias cf="rm -rf vendor/ composer.lock && composer install --ignore-platform-reqs"
 
 # NPM
