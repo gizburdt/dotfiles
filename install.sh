@@ -30,7 +30,7 @@ brew bundle --verbose
 chsh -s $(which zsh)
 
 # Install PHP extensions with PECL
-pecl install memcached imagick
+pecl install memcached imagick redis
 
 # Install Composer
 curl -sS https://getcomposer.org/installer | php
