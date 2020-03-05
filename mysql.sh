@@ -3,12 +3,14 @@
 if [ "$1" == "remove" ]; then
     ps -ax | grep mysql
 
+    # Stop
     brew services stop mysql@5.7
     brew services stop mysql
     brew remove mysql@5.7
     brew remove mysql
     brew cleanup
 
+    # Remove
     sudo rm /usr/local/mysql
     sudo rm -rf /usr/local/var/mysql
     sudo rm -rf /usr/local/mysql*
@@ -16,13 +18,16 @@ if [ "$1" == "remove" ]; then
     sudo rm -rf /Library/StartupItems/MySQLCOM
     sudo rm -rf /Library/PreferencePanes/My*
 
+    # LaunchAgent
     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 
+    # Remove
     rm -rf ~/Library/PreferencePanes/My*
     sudo rm -rf /Library/Receipts/mysql*
     sudo rm -rf /Library/Receipts/MySQL*
     sudo rm -rf /private/var/db/receipts/*mysql*/
 
+    # Reboot
     echo "Reboot!"
     sudo reboot
 fi
@@ -30,6 +35,7 @@ fi
 if [ "$1" == "install" ]; then
     sudo rm -rf /usr/local/var/mysql/*
 
+    # Brew
     brew doctor
     brew update
     brew install mysql@5.7

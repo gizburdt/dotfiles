@@ -63,3 +63,14 @@ alias php56="phpv php@5.6"
 alias php72="phpv php@7.2"
 alias php73="phpv php@7.3"
 alias php74="phpv php"
+
+# Nova
+novaDevtools() {
+    cd ./vendor/laravel/nova
+    mv webpack.mix.js.dist webpack.mix.js
+    npm i
+    npm run dev
+    rm -rf node_modules
+    cd -
+    php artisan nova:publish
+}
