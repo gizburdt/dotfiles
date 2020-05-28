@@ -50,6 +50,7 @@ cask 'iterm2'
 cask 'java'
 cask 'plex-media-player'
 cask 'sequel-pro'
+cask 'shimo'
 cask 'skype'
 cask 'slack'
 cask 'spotify'
@@ -85,4 +86,5 @@ mas 'Keynote', id: 409183694
 mas 'Medis', id: 1063631769
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
+mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Tweetbot', id: 557168941
