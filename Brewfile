@@ -26,13 +26,13 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Development
+brew 'mysql@5.7'
+brew 'nginx'
+brew 'node'
 brew 'php'
 brew 'php@5.6'
 brew 'php@7.2'
 brew 'php@7.3'
-brew 'mysql@5.7'
-brew 'nginx'
-brew 'node'
 brew 'redis'
 brew 'yarn'
 
