@@ -37,3 +37,4 @@ Thumbs.db
 .vscode
 .vagrant/
 *.sublime-*
+*.code-workspace

@@ -48,6 +48,9 @@ alias pu="./vendor/bin/phpunit"
 # Weather
 weather() { curl -4 wttr.in/${1:-steenwijk} }
 
+# Code
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
 # PHP
 phpv() {
     valet stop
