@@ -73,6 +73,7 @@ cask 'quicklook-csv'
 cask 'qlstephen'
 
 # Fonts
+cask 'font-jetbrains-mono'
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-roboto'
