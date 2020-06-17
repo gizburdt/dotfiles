@@ -34,6 +34,9 @@ alias nrs="npm run start"
 alias nrsd="npm run start:dev"
 alias nf="rm -rf node_modules/ package-lock.json && npm install"
 
+# Nuxt
+alias nx="nuxt"
+
 # Adonis
 alias ad="adonis"
 alias ads="adonis serve"
