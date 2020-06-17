@@ -21,6 +21,7 @@ brew 'mas' # Mac App Store manager
 brew 'pkg-config'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
+brew 'unrar'
 brew 'zlib' # Needed for Memcached
 brew 'zsh'
 brew 'zsh-completions'
