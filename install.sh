@@ -39,6 +39,9 @@ mv composer.phar /usr/local/bin/composer
 # Install global Composer packages
 /usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet
 
+# Install NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
 
