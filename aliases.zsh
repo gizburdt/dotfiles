@@ -17,6 +17,7 @@ alias amf="php artisan migrate:fresh"
 alias amfs="php artisan migrate:fresh --seed"
 alias arl="php artisan route:list"
 alias dusk="php artisan dusk"
+alias please="php please"
 
 # Composer
 alias cda="composer dump-autoload -o"
