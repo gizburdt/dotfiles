@@ -24,7 +24,7 @@ brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle --verbose
+brew bundle --file=$HOME/.dotfiles/install/Brewfile --verbose
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
@@ -66,8 +66,8 @@ ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Dock
-source .dock
+source $HOME/.dotfiles/install/.dock
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-source .macos $computerName
+source $HOME/.dotfiles/install/.macos $computerName
