@@ -1,6 +1,18 @@
 #!/bin/sh
 
-if [ "$1" == "remove" ]; then
+choices=("Install" "Remove")
+
+select answer in "${choices[@]}"; do
+    for item in "${choices[@]}"; do
+        if [[ $item == $answer ]]; then
+            break 2
+        fi
+    done
+done
+
+if [ "$answer" == "Remove" ]; then
+    echo "Remove"
+
     ps -ax | grep mysql
 
     # Stop
@@ -32,7 +44,9 @@ if [ "$1" == "remove" ]; then
     sudo reboot
 fi
 
-if [ "$1" == "install" ]; then
+if [ "$answer" == "Install" ]; then
+    echo "Install"
+
     sudo rm -rf /usr/local/var/mysql/*
 
     # Brew
