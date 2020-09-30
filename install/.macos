@@ -256,6 +256,7 @@ sudo chflags nohidden /Volumes
 
 # Hide folders in ~/
 sudo chflags hidden ~/Movies
+sudo chflags hidden ~/Music
 sudo chflags hidden ~/Applications
 
 # Remove Dropbox’s green checkmark icons in Finder
