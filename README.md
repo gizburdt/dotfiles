@@ -36,8 +36,9 @@ Unfortunately, there are still some things we have to set manually:
 | -------------------- | ------------------------------------------------ |
 | **Desktop:**         | - [ ] Wallpaper                                  |
 | **Menubar:**         | - [ ] Hide Language                              |
-|                      | - [ ] Hide User                                  |
-|                      | - [ ] Show Icons (Bluetooth, Time Machine, ...)  |
+                         - [ ] Hide User
+                         - [ ] Show Icons (Bluetooth, Time Machine, ...)
+| **System**           | //                                               |
 
 **System:**
 - [ ] Trackpad Gestures
