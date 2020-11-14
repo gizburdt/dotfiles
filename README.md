@@ -28,12 +28,13 @@ If you did all of the above you may now follow these install instructions to set
 8. Restore preferences by running `mackup restore`
 9. Restart your computer to finalize the process
 
-### After (Needs Automation)
+### After (Not automated)
 
 Unfortunately, there are still some things we have to set manually:
 
-**Desktop:**
-- [ ] Wallpaper
+|----------------------|---------------------------------------------|
+| **Desktop:**         | - [] Wallpaper                              |
+|----------------------|---------------------------------------------|
 
 **Menubar:**
 - [ ] Hide Language
