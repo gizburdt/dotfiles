@@ -28,7 +28,7 @@ If you did all of the above you may now follow these install instructions to set
 8. Restore preferences by running `mackup restore`
 9. Restart your computer to finalize the process
 
-### After (Not automated)
+### After (not automated, opinionated)
 
 Unfortunately, there are still some things we have to set manually:
 
@@ -36,53 +36,78 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td><strong>Desktop</strong></td>
         <td>
-            <ul>
-                <li>Wallpaper</li>
-            </ul>
+            - Wallpaper
         </td>
     </tr>
     <tr>
         <td><strong>Menubar</strong></td>
         <td>
-            Hide Language<br>
-            Hide User<br>
-            Show Icons (Bluetooth, Time Machine, ...)<br>
+            - Hide Language<br>
+            - Hide User<br>
+            - Show Icons (Bluetooth, Time Machine, ...)<br>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>System</strong></td>
+        <td>
+            - Trackpad Gestures<br>
+            - Display Resolution<br>
+            - Disable Apps On Startup<br>
+            - Enable Night Shift<br>
+            - Install aptX
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Spotlight</strong></td>
+        <td>
+            - Hide Suggestions
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Notifications</strong></td>
+        <td>
+            - Preferences<br>
+            - Widgets (Notifications Center)
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Finder</strong></td>
+        <td>
+            - Toolbar<br>
+            - Sidebar
+        </td>
+    </tr>
+    <tr>
+        <td><strong>FaceTime</strong></td>
+        <td>
+            - Disable Calling
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Calendar</strong></td>
+        <td>
+            - Default Calendar<br>
+            - Show Week Numbers<br>
+            - Show Birthdays
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Reminders</strong></td>
+        <td>
+            - Notifications for today (time)
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Contacts</strong></td>
+        <td>
+            - Disable Siri Suggestions
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Time Machine</strong></td>
+        <td>
+            - Setup<br>
+            - Exceptions
         </td>
     </tr>
 </table>
-
-**System:**
-- [ ] Trackpad Gestures
-- [ ] Display Resolution
-- [ ] Disable Apps On Startup
-- [ ] Enable Night Shift
-- [ ] Install aptX
-
-**Spotlight:**
-- [ ] Hide Suggestions
-
-**Notifications:**
-- [ ] Preferences
-- [ ] Widgets (Notifications Center)
-
-**Finder:**
-- [ ] Toolbar
-- [ ] Sidebar
-
-**FaceTime:**
-- [ ] Disable Calling
-
-**Calendar:**
-- [ ] Default Calendar
-- [ ] Show Week Numbers
-- [ ] Show Birthdays
-
-**Reminders:**
-- [ ] Notifications for today (time)
-
-**Contacts**
-- [ ] Disable Siri Suggestions
-
-**Time Machine:**
-- [ ] Setup
-- [ ] Exceptions
