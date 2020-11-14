@@ -42,9 +42,11 @@ Unfortunately, there are still some things we have to set manually:
 <tr>
 <th>Menubar:</th>
 <td>
-<p><input type="checkbox"> Hide Language</p>
-<p><input type="checkbox"> Hide User</p>
-<p><input type="checkbox"> Show Icons (Bluetooth, Time Machine, ...)</p>
+<ul>
+<li><input type="checkbox"> Hide Language</li>
+<li><input type="checkbox"> Hide User</li>
+<li><input type="checkbox"> Show Icons (Bluetooth, Time Machine, ...)</li>
+</ul>
 </td>
 </tr>
 </table>
