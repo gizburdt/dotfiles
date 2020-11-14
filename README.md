@@ -32,7 +32,7 @@ If you did all of the above you may now follow these install instructions to set
 
 Unfortunately, there are still some things we have to set manually:
 
-<table style="width: 100%;">
+<table width="100%">
 <tr>
 <th>Desktop:</th>
 <td>
