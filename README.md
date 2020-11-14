@@ -44,11 +44,9 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td><strong>Menubar</strong></td>
         <td>
-            <ul>
-                <li>Hide Language</li>
-                <li>Hide User</li>
-                <li>Show Icons (Bluetooth, Time Machine, ...)</li>
-            </ul>
+            Hide Language<br>
+            Hide User<br>
+            Show Icons (Bluetooth, Time Machine, ...)<br>
         </td>
     </tr>
 </table>
