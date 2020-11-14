@@ -60,7 +60,7 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td><strong>Notifications</strong></td>
         <td>
-            - Preferences (per app)<br>
+            - Preferences<br>
             - Widgets (Notifications Center)
         </td>
     </tr>
