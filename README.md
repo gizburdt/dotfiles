@@ -32,13 +32,26 @@ If you did all of the above you may now follow these install instructions to set
 
 Unfortunately, there are still some things we have to set manually:
 
-| Section              | Todo                                             |
-| -------------------- | ------------------------------------------------ |
-| **Desktop:**         | - [ ] Wallpaper                                  |
-| **Menubar:**         | - [ ] Hide Language                              |
-                         - [ ] Hide User
-                         - [ ] Show Icons (Bluetooth, Time Machine, ...)
-| **System**           | //                                               |
+<table>
+    <tr>
+        <td><strong>Desktop</strong></td>
+        <td>
+            <ul>
+                <li>Wallpaper</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Menubar</strong></td>
+        <td>
+            <ul>
+                <li>Hide Language</li>
+                <li>Hide User</li>
+                <li>Show Icons (Bluetooth, Time Machine, ...)</li>
+            </ul>
+        </td>
+    </tr>
+</table>
 
 **System:**
 - [ ] Trackpad Gestures
