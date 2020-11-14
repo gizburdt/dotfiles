@@ -34,6 +34,16 @@ Unfortunately, there are still some things we have to set manually:
 
 <table>
     <tr>
+        <td><strong>System</strong></td>
+        <td>
+            - Trackpad Gestures<br>
+            - Retina Resolution (1440x900)<br>
+            - Disable Apps On Startup<br>
+            - Enable Night Shift (22:00 - 08:00<br>
+            - Install aptX (for Bluetooth)
+        </td>
+    </tr>
+    <tr>
         <td><strong>Desktop</strong></td>
         <td>
             - Wallpaper
@@ -48,26 +58,16 @@ Unfortunately, there are still some things we have to set manually:
         </td>
     </tr>
     <tr>
-        <td><strong>System</strong></td>
+        <td><strong>Notifications</strong></td>
         <td>
-            - Trackpad Gestures<br>
-            - Display Resolution<br>
-            - Disable Apps On Startup<br>
-            - Enable Night Shift<br>
-            - Install aptX
+            - Preferences (per app)<br>
+            - Widgets (Notifications Center)
         </td>
     </tr>
     <tr>
         <td><strong>Spotlight</strong></td>
         <td>
             - Hide Suggestions
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Notifications</strong></td>
-        <td>
-            - Preferences<br>
-            - Widgets (Notifications Center)
         </td>
     </tr>
     <tr>
@@ -94,7 +94,7 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td><strong>Reminders</strong></td>
         <td>
-            - Notifications for today (time)
+            - Notifications for today (10:00)
         </td>
     </tr>
     <tr>
@@ -108,6 +108,12 @@ Unfortunately, there are still some things we have to set manually:
         <td>
             - Setup<br>
             - Exceptions
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Photos / Photo Booth</strong></td>
+        <td>
+            - Library path (~/System)<br>
         </td>
     </tr>
 </table>
