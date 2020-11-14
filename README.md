@@ -34,17 +34,17 @@ Unfortunately, there are still some things we have to set manually:
 
 <table style="width: 100%;">
 <tr>
-<th>**Desktop:**</th>
+<th>Desktop:</th>
 <td>
-- [ ] Wallpaper
+<p><input type="checkbox"> Wallpaper</p>
 </td>
 </tr>
 <tr>
-<td>**Menubar:**</td>
+<th>Menubar:</th>
 <td>
-- [ ] Hide Language
-- [ ] Hide User
-- [ ] Show Icons (Bluetooth, Time Machine, ...)
+<p><input type="checkbox"> Hide Language</p>
+<p><input type="checkbox"> Hide User</p>
+<p><input type="checkbox"> Show Icons (Bluetooth, Time Machine, ...)</p>
 </td>
 </tr>
 </table>
