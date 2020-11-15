@@ -39,7 +39,7 @@ Unfortunately, there are still some things we have to set manually:
             - Trackpad Gestures<br>
             - Retina Resolution (1440x900)<br>
             - Disable Apps On Startup<br>
-            - Enable Night Shift (22:00 - 08:00<br>
+            - Enable Night Shift (22:00 - 08:00)<br>
             - Install aptX (for Bluetooth)
         </td>
     </tr>
