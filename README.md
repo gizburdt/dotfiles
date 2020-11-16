@@ -34,7 +34,7 @@ Unfortunately, there are still some things we have to set manually:
 
 <table>
     <tr>
-        <td><strong>System Preferences</strong></td>
+        <td valign="top"><strong>System Preferences</strong></td>
         <td>
             - Desktop: Wallpaper<br>
             - Desktop: Screen Saver<br>
@@ -49,7 +49,7 @@ Unfortunately, there are still some things we have to set manually:
         </td>
     </tr>
     <tr>
-        <td><strong>Widgets</strong></td>
+        <td valign="top"><strong>Widgets</strong></td>
         <td>
             - Calendar<br>
             - Reminders<br>
@@ -57,20 +57,20 @@ Unfortunately, there are still some things we have to set manually:
         </td>
     </tr>
     <tr>
-        <td><strong>Finder</strong></td>
+        <td valign="top"><strong>Finder</strong></td>
         <td>
             - Toolbar<br>
             - Sidebar
         </td>
     </tr>
     <tr>
-        <td><strong>FaceTime</strong></td>
+        <td valign="top"><strong>FaceTime</strong></td>
         <td>
             - Disable Calling
         </td>
     </tr>
     <tr>
-        <td><strong>Calendar</strong></td>
+        <td valign="top"><strong>Calendar</strong></td>
         <td>
             - Default Calendar<br>
             - Show Week Numbers<br>
@@ -78,32 +78,32 @@ Unfortunately, there are still some things we have to set manually:
         </td>
     </tr>
     <tr>
-        <td><strong>Reminders</strong></td>
+        <td valign="top"><strong>Reminders</strong></td>
         <td>
             - Notifications for Today (10:00)
         </td>
     </tr>
     <tr>
-        <td><strong>Contacts</strong></td>
+        <td valign="top"><strong>Contacts</strong></td>
         <td>
             - Disable Siri Suggestions
         </td>
     </tr>
     <tr>
-        <td><strong>Time Machine</strong></td>
+        <td valign="top"><strong>Time Machine</strong></td>
         <td>
             - Setup<br>
             - Exceptions
         </td>
     </tr>
     <tr>
-        <td><strong>Photos / Photo Booth</strong></td>
+        <td valign="top"><strong>Photos / Photo Booth</strong></td>
         <td>
             - Library path (~/System)<br>
         </td>
     </tr>
     <tr>
-        <td><strong>Photo Booth</strong></td>
+        <td valign="top"><strong>Photo Booth</strong></td>
         <td>
             - Library path (~/System)<br>
         </td>
