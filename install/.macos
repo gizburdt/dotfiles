@@ -69,9 +69,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Remove duplicates in the “Open With” menu (also see `lscleanup` alias)
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
-# Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
-
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
@@ -92,13 +89,9 @@ defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 defaults write NSGlobalDomain ApplePersistence -bool false
 
-# Show icons in toolbar
-defaults write com.apple.systemuiserver menuExtras -array
-	"/System/Library/CoreServices/Menu Extras/AirPort.menu"
-	"/System/Library/CoreServices/Menu Extras/Bluetooth.menu"
-	"/System/Library/CoreServices/Menu Extras/Clock.menu"
-	"/System/Library/CoreServices/Menu Extras/Displays.menu"
-	"/System/Library/CoreServices/Menu Extras/TimeMachine.menu"
+# Use digital clock
+defaults write com.apple.menuextra.clock IsAnalog -bool false
+defaults write com.apple.menuextra.clock DateFormat -string "d MMM HH:mm"
 
 # Show battery percentage in toolbar
 defaults write com.apple.menuextra.battery ShowPercent -bool true
@@ -282,6 +275,10 @@ defaults write com.apple.dock size-immutable -bool true
 
 # Dock orientation: 'left', 'bottom', 'right'
 defaults write com.apple.dock 'orientation' -string 'left'
+
+# No delay and less speed when auto-showing Dock
+defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.15
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock mineffect -string "scale"
@@ -594,6 +591,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
+# Set as default browser
 open -a "Google Chrome" --args --make-default-browser
 
 ###############################################################################

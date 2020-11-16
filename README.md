@@ -34,40 +34,26 @@ Unfortunately, there are still some things we have to set manually:
 
 <table>
     <tr>
-        <td><strong>System</strong></td>
+        <td><strong>System Preferences</strong></td>
         <td>
-            - Trackpad Gestures<br>
-            - Retina Resolution (1440x900)<br>
-            - Disable Apps On Startup<br>
-            - Enable Night Shift (22:00 - 08:00)<br>
-            - Install aptX (for Bluetooth)
+            - Desktop: Wallpaper<br>
+            - Desktop: Screen Saver<br>
+            - Dock: Size<br>
+            - Menubar: Control Panel<br>
+            - Trackpad: Gestures<br>
+            - Notifications<br>
+            - Users: Apps On Startup<br>
+            - Bluetooth: Install aptX<br>
+            - Display: Retina Resolution (1440x900)<br>
+            - Display: Night Shift (22:00 - 08:00)
         </td>
     </tr>
     <tr>
-        <td><strong>Desktop</strong></td>
+        <td><strong>Widgets</strong></td>
         <td>
-            - Wallpaper
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Menubar</strong></td>
-        <td>
-            - Hide Language<br>
-            - Hide User<br>
-            - Show Icons (Bluetooth, Time Machine, ...)<br>
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Notifications</strong></td>
-        <td>
-            - Preferences<br>
-            - Widgets (Notifications Center)
-        </td>
-    </tr>
-    <tr>
-        <td><strong>Spotlight</strong></td>
-        <td>
-            - Hide Suggestions
+            - Calendar<br>
+            - Reminders<br>
+            - Calendar
         </td>
     </tr>
     <tr>
@@ -94,7 +80,7 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td><strong>Reminders</strong></td>
         <td>
-            - Notifications for today (10:00)
+            - Notifications for Today (10:00)
         </td>
     </tr>
     <tr>
@@ -112,6 +98,12 @@ Unfortunately, there are still some things we have to set manually:
     </tr>
     <tr>
         <td><strong>Photos / Photo Booth</strong></td>
+        <td>
+            - Library path (~/System)<br>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Photo Booth</strong></td>
         <td>
             - Library path (~/System)<br>
         </td>
