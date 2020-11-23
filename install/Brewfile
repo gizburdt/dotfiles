@@ -1,6 +1,5 @@
 # Taps
 tap 'homebrew/cask-cask'
-tap 'homebrew/cask-eid'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
@@ -38,6 +37,7 @@ brew 'yarn'
 
 # Apps
 cask '1password'
+cask '1password-cli'
 cask 'appzapper'
 cask 'dbngin'
 cask 'discord'
@@ -50,7 +50,6 @@ cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'insomnia'
 cask 'iterm2'
-cask 'java'
 cask 'little-snitch'
 cask 'micro-snitch'
 cask 'plex'
@@ -73,9 +72,9 @@ cask 'zoomus'
 
 # Quicklook
 cask 'qlcolorcode'
+cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'quicklook-csv'
-cask 'qlstephen'
 
 # Fonts
 cask 'font-jetbrains-mono'
