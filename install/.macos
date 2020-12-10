@@ -91,6 +91,7 @@ defaults write NSGlobalDomain ApplePersistence -bool false
 
 # Use digital clock
 defaults write com.apple.menuextra.clock IsAnalog -bool false
+defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
 defaults write com.apple.menuextra.clock DateFormat -string "d MMM HH:mm"
 
 # Show battery percentage in toolbar
@@ -509,7 +510,7 @@ defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 ###############################################################################
-# Address Book, iCal, TextEdit, and Disk Utility             			      #
+# Address Book, iCal, Reminders, TextEdit, and Disk Utility             			      #
 ###############################################################################
 
 # Sorting by First Name, then Last Name
@@ -525,6 +526,9 @@ defaults write com.apple.iCal "Show Week Numbers" -bool true
 
 # Enable the debug menu in iCal (pre-10.8)
 defaults write com.apple.iCal IncludeDebugMenu -bool true
+
+# Set time for daily reminders
+defaults write com.apple.reminders todayNotificationFireTime -int 1000
 
 # Use plain text mode for new TextEdit documents
 defaults write com.apple.TextEdit RichText -int 0
@@ -577,6 +581,10 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool false
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
+# Default folders
+defaults write com.apple.Photos IPXDefaultLastSavedDirectoryForPhotoLibrary -string "~/System";
+defaults write com.apple.Photos NSNavLastRootDirectory -string "~/System";
+
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
@@ -623,6 +631,7 @@ for app in "Activity Monitor" \
 	"Mail" \
 	"Messages" \
 	"Photos" \
+    "Reminders" \
 	"Safari" \
 	"SystemUIServer" \
 	"Terminal" \

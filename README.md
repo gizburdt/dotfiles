@@ -71,13 +71,7 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td valign="top"><strong>Calendar</strong></td>
         <td>
-            - Default Calendar<br>
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>Reminders</strong></td>
-        <td>
-            - Notifications for Today (10:00)
+            - Default Calendar
         </td>
     </tr>
     <tr>
