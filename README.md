@@ -72,7 +72,6 @@ Unfortunately, there are still some things we have to set manually:
         <td valign="top"><strong>Calendar</strong></td>
         <td>
             - Default Calendar<br>
-            - Show Week Numbers<br>
             - Show Birthdays
         </td>
     </tr>
