@@ -63,12 +63,6 @@ Unfortunately, there are still some things we have to set manually:
         </td>
     </tr>
     <tr>
-        <td valign="top"><strong>FaceTime</strong></td>
-        <td>
-            - Disable Calling
-        </td>
-    </tr>
-    <tr>
         <td valign="top"><strong>Calendar</strong></td>
         <td>
             - Default Calendar
