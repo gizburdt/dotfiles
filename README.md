@@ -87,16 +87,4 @@ Unfortunately, there are still some things we have to set manually:
             - Exceptions
         </td>
     </tr>
-    <tr>
-        <td valign="top"><strong>Photos / Photo Booth</strong></td>
-        <td>
-            - Library path (~/System)<br>
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>Photo Booth</strong></td>
-        <td>
-            - Library path (~/System)<br>
-        </td>
-    </tr>
 </table>
