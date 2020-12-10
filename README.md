@@ -52,7 +52,7 @@ Unfortunately, there are still some things we have to set manually:
         <td>
             - Calendar<br>
             - Reminders<br>
-            - Calendar
+            - Weather
         </td>
     </tr>
     <tr>
