@@ -38,7 +38,6 @@ Unfortunately, there are still some things we have to set manually:
         <td>
             - Desktop: Wallpaper<br>
             - Desktop: Screen Saver<br>
-            - Dock: Size<br>
             - Menubar: Control Panel<br>
             - Trackpad: Gestures<br>
             - Notifications<br>
