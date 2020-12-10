@@ -69,12 +69,6 @@ Unfortunately, there are still some things we have to set manually:
         </td>
     </tr>
     <tr>
-        <td valign="top"><strong>Contacts</strong></td>
-        <td>
-            - Disable Siri Suggestions
-        </td>
-    </tr>
-    <tr>
         <td valign="top"><strong>Time Machine</strong></td>
         <td>
             - Setup<br>

@@ -546,6 +546,9 @@ defaults write com.apple.DiskUtility advanced-image-options -bool true
 # Auto-play videos when opened with QuickTime Player
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
+# Disable Siri Suggestions for Contacts
+defaults write com.apple.suggestions AppCanShowSiriSuggestionsBlacklist -array "com.apple.AddressBook"
+
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
