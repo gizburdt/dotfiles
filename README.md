@@ -36,9 +36,7 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td valign="top"><strong>System Preferences</strong></td>
         <td>
-            - Bluetooth: Install aptX<br>
             - Desktop: Wallpaper<br>
-            - Display: Retina Resolution (1440x900)<br>
             - Display: Night Shift (22:00 - 08:00)<br>
             - Menubar: Control Panel<br>
             - Notifications<br>
