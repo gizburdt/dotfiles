@@ -633,6 +633,21 @@ open -a "Google Chrome" --args --make-default-browser
 defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
 
 ###############################################################################
+# MicroSnitch                                                                 #
+###############################################################################
+
+# Disable notifications
+defaults write at.obdev.MicroSnitch ShowUserNotificationsForDeviceBecameActive -bool false
+defaults write at.obdev.MicroSnitch ShowUserNotificationsForDeviceBecameInactive -bool false
+
+###############################################################################
+# Zoom                                                                        #
+###############################################################################
+
+# Hide icon
+defaults write ZoomChat ZoomShowIconInMenuBar -bool false
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 
