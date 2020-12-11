@@ -38,6 +38,7 @@ Unfortunately, there are still some things we have to set manually:
         <td>
             - Desktop: Wallpaper<br>
             - Display: Night Shift (22:00 - 08:00)<br>
+            - Keyboard: Touch Bar<br>
             - Menubar: Control Panel<br>
             - Notifications<br>
             - Trackpad: Gestures<br>
