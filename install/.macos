@@ -665,10 +665,9 @@ for app in "Activity Monitor" \
     "Reminders" \
 	"Safari" \
 	"SystemUIServer" \
-	"Terminal" \
 	"Tweetbot" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done
 
-echo "Done. Reboot!"
+echo "Done. Run mackup restore. Reboot!"
