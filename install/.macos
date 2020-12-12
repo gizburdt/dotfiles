@@ -89,11 +89,6 @@ defaults write com.apple.loginwindow TALLogoutSavesState -bool false
 defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 defaults write NSGlobalDomain ApplePersistence -bool false
 
-# Use digital clock
-defaults write com.apple.menuextra.clock IsAnalog -bool false
-defaults write com.apple.menuextra.clock ShowDayOfWeek -bool true
-defaults write com.apple.menuextra.clock DateFormat -string "d MMM HH:mm"
-
 # Show battery percentage in toolbar
 defaults write com.apple.menuextra.battery ShowPercent -bool true
 
