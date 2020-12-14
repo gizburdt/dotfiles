@@ -8,6 +8,7 @@ alias a="php artisan"
 alias c="composer"
 alias g="gulp"
 alias n="npm"
+alias s="cd ~/Server"
 
 # Laravel
 alias amr="php artisan migrate:refresh"
