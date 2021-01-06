@@ -88,7 +88,7 @@ phpv() {
 
 alias php72="phpv php@7.2"
 alias php73="phpv php@7.3"
-alias php73="phpv php@7.4"
+alias php74="phpv php@7.4"
 alias php74="phpv php"
 
 # Nova
