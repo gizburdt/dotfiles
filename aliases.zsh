@@ -86,8 +86,8 @@ phpv() {
     valet install
 }
 
-alias php74="phpv php@7.4"
-alias php74="phpv php"
+alias php7="phpv php@7.4"
+alias php8="phpv php"
 
 # Nova
 novaDevtools() {
