@@ -8,6 +8,7 @@ alias a="php artisan"
 alias c="composer"
 alias g="gulp"
 alias n="npm"
+alias y="yarn"
 alias s="cd ~/Server"
 
 # Laravel
@@ -37,6 +38,10 @@ alias nrp="npm run production"
 alias nrs="npm run start"
 alias nrsd="npm run start:dev"
 alias nf="rm -rf node_modules/ package-lock.json && npm install"
+
+# Yarn
+alias yi="yarn install"
+alias yb="yarn build"
 
 # Nuxt
 alias nx="nuxt"
