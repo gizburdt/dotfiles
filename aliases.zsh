@@ -86,6 +86,7 @@ phpv() {
     brew unlink php@7.4 php
     brew link --force --overwrite $1
     brew services start $1
+    brew services restart $1
     composer global update
     rm -f ~/.config/valet/valet.sock
     valet install
