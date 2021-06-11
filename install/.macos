@@ -347,6 +347,7 @@ sudo chflags nohidden /Volumes
 sudo chflags hidden ~/Movies
 sudo chflags hidden ~/Music
 sudo chflags hidden ~/Applications
+sudo chflags hidden ~/Public
 
 # Remove Dropbox’s green checkmark icons in Finder
 file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns
