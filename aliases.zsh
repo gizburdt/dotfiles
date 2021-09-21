@@ -61,7 +61,10 @@ alias pu="./vendor/bin/phpunit"
 weather() { curl -4 wttr.in/${1:-steenwijk} }
 
 # Code
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+# QR
+qr() { curl qrcode.show/$1 }
 
 # DB
 opendb () {
