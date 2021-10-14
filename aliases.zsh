@@ -32,8 +32,8 @@ alias cf="rm -rf vendor/ composer.lock && composer install --ignore-platform-req
 
 # NPM
 alias ni="npm install"
-alias nrw="npm run watch"
-alias nrd="npm run dev"
+alias nrw="npm run watch --quiet-deps"
+alias nrd="npm run dev --quiet-deps"
 alias nrp="npm run production"
 alias nrs="npm run start"
 alias nrsd="npm run start:dev"
@@ -65,6 +65,13 @@ code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # QR
 qr() { curl qrcode.show/$1 }
+
+# IDE
+ide() {
+    php artisan ide-helper:generate
+    php artisan ide-helper:models
+    php artisan ide-helper:meta
+}
 
 # DB
 opendb () {
