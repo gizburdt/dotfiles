@@ -18,6 +18,7 @@ alias amrs="php artisan migrate:refresh --seed"
 alias amf="php artisan migrate:fresh"
 alias amfs="php artisan migrate:fresh --seed"
 alias arl="php artisan route:list"
+alias ah="php artisan horizon"
 alias dusk="php artisan dusk"
 alias please="php please"
 
