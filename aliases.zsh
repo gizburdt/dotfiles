@@ -1,4 +1,5 @@
 # General
+alias ..="cd .."
 alias cpssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias fcli="source $HOME/.zshrc"
 alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
@@ -12,9 +13,7 @@ alias y="yarn"
 alias s="cd ~/Server"
 
 # Laravel
-alias amr="php artisan migrate:refresh"
 alias ams="php artisan migrate --seed"
-alias amrs="php artisan migrate:refresh --seed"
 alias amf="php artisan migrate:fresh"
 alias amfs="php artisan migrate:fresh --seed"
 alias arl="php artisan route:list"
@@ -46,14 +45,6 @@ alias yb="yarn build"
 
 # Nuxt
 alias nx="nuxt"
-
-# Adonis
-alias ad="adonis"
-alias ads="adonis serve"
-alias adsd="adonis serve --dev"
-
-# Vagrant
-alias vu="vagrant up"
 
 # PHPUnit
 alias pu="./vendor/bin/phpunit"
@@ -104,7 +95,7 @@ phpv() {
 }
 
 alias php7="phpv php@7.4"
-alias php8="phpv php"
+alias php8="phpv php@8.0"
 
 # Nova
 novaDevtools() {
