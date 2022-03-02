@@ -17,6 +17,7 @@ alias ams="php artisan migrate --seed"
 alias amf="php artisan migrate:fresh"
 alias amfs="php artisan migrate:fresh --seed"
 alias arl="php artisan route:list"
+alias arlev="php artisan route:list --except-vendor"
 alias ah="php artisan horizon"
 alias dusk="php artisan dusk"
 alias please="php please"
@@ -86,6 +87,7 @@ opendb () {
 phpv() {
     valet stop
     brew unlink php@7.4 php
+    brew unlink php@8.0 php
     brew link --force --overwrite $1
     brew services start $1
     brew services restart $1
