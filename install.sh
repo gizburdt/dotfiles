@@ -37,13 +37,16 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet statamic/cli
+/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet statamic/cli spatie/global-ray
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
+
+# Install Ray
+global-ray install
 
 # Sublime
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
