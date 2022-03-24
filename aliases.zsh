@@ -86,8 +86,7 @@ opendb () {
 # PHP
 phpv() {
     valet stop
-    brew unlink php@7.4 php
-    brew unlink php@8.0 php
+    brew unlink php@7.4 php@8.0 php
     brew link --force --overwrite $1
     brew services start $1
     brew services restart $1
