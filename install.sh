@@ -37,7 +37,7 @@ curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet statamic/cli spatie/global-ray
+/usr/local/bin/composer global require laravel/installer laravel/spark-installer laravel/valet statamic/cli spatie/global-ray spatie/visit
 
 # Install NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash

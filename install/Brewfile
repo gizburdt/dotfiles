@@ -8,13 +8,14 @@ tap 'exolnet/homebrew-deprecated'
 # Binaries
 brew 'awscli'
 brew 'bash' # Latest Bash version
-brew 'bat' # "cat" on steroids
+brew 'bat'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
 brew 'gnupg2'
 brew 'grep'
 brew 'httpie'
 brew 'hub'
+brew 'jq'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config'
