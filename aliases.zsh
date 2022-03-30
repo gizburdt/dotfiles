@@ -84,19 +84,9 @@ opendb () {
 }
 
 # PHP
-phpv() {
-    valet stop
-    brew unlink php@7.4 php@8.0 php
-    brew link --force --overwrite $1
-    brew services start $1
-    brew services restart $1
-    composer global update
-    rm -f ~/.config/valet/valet.sock
-    valet install
-}
-
-alias php7="phpv php@7.4"
-alias php8="phpv php@8.0"
+alias php81="brew unlink php@8.0 php@7.4 && brew link --overwrite --force php"
+alias php80="brew unlink php@7.4 php && brew link --overwrite --force php@8.0"
+alias php74="brew unlink php@8.0 php && brew link --overwrite --force php@7.4"
 
 # Nova
 novaDevtools() {
