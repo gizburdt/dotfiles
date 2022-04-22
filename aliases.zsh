@@ -7,7 +7,6 @@ alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 # Short
 alias a="php artisan"
 alias c="composer"
-alias g="gulp"
 alias n="npm"
 alias y="yarn"
 alias s="cd ~/Server"
@@ -18,8 +17,9 @@ alias amf="php artisan migrate:fresh"
 alias amfs="php artisan migrate:fresh --seed"
 alias arl="php artisan route:list"
 alias arlev="php artisan route:list --except-vendor"
+alias ael="php artisan event:list"
 alias ah="php artisan horizon"
-alias dusk="php artisan dusk"
+alias ad="php artisan dusk"
 alias please="php please"
 
 # Composer
@@ -88,13 +88,7 @@ alias php81="brew unlink php@8.0 php@7.4 && brew link --overwrite --force php"
 alias php80="brew unlink php@7.4 php && brew link --overwrite --force php@8.0"
 alias php74="brew unlink php@8.0 php && brew link --overwrite --force php@7.4"
 
-# Nova
-novaDevtools() {
-    cd ./vendor/laravel/nova
-    mv webpack.mix.js.dist webpack.mix.js
-    npm i
-    npm run dev
-    rm -rf node_modules
-    cd -
-    php artisan nova:publish
+# Git
+gitbl () {
+    for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort -r
 }
