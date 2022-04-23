@@ -36,11 +36,13 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td valign="top"><strong>System Preferences</strong></td>
         <td>
+            - Battery: Battery (5m), Power (10m)
             - Desktop: Wallpaper<br>
             - Display: Night Shift (22:00 - 08:00)<br>
             - Keyboard: Touch Bar<br>
             - Menubar: Control Panel<br>
             - Notifications<br>
+            - Security: 1m after sleep
             - Trackpad: Gestures<br>
             - Users: Apps On Startup
         </td>
