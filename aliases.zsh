@@ -29,7 +29,10 @@ alias cii="composer install --ignore-platform-reqs"
 alias cu="composer update"
 alias cui="composer update --ignore-platform-reqs"
 alias ct="composer test"
-alias cf="rm -rf vendor/ composer.lock && composer install --ignore-platform-reqs"
+alias cf="rm -rf vendor/ && composer install"
+alias cfi="rm -rf vendor/ && composer install --ignore-platform-reqs"
+alias cff="rm -rf vendor/ composer.lock && composer install"
+alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-reqs"
 
 # NPM
 alias ni="npm install"
