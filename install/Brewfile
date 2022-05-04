@@ -64,6 +64,7 @@ cask 'sublime-text'
 cask 'tableplus'
 cask 'teamviewer'
 cask 'the-unarchiver'
+cask 'tinkerwell'
 cask 'tor-browser'
 cask 'tower'
 cask 'transmit'
@@ -92,3 +93,4 @@ cask 'font-source-serif-pro'
 mas 'Medis', id: 1063631769
 mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Tweetbot', id: 1527500834
+mas 'WireGuard', id: 1451685025
