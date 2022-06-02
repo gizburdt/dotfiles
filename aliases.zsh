@@ -12,6 +12,7 @@ alias y="yarn"
 alias s="cd ~/Server"
 
 # Laravel
+alias am="php artisan migrate"
 alias ams="php artisan migrate --seed"
 alias amf="php artisan migrate:fresh"
 alias amfs="php artisan migrate:fresh --seed"
