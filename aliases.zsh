@@ -51,6 +51,10 @@ alias yb="yarn build"
 # Nuxt
 alias nx="nuxt"
 
+# Sitestein
+alias st="sitestein"
+alias stp="sitestein publish"
+
 # PHPUnit
 alias pu="./vendor/bin/phpunit"
 
