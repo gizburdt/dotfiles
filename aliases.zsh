@@ -8,7 +8,6 @@ alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias a="php artisan"
 alias c="composer"
 alias n="npm"
-alias y="yarn"
 alias s="cd ~/Server"
 
 # Laravel
@@ -46,12 +45,8 @@ alias nrs="npm run start"
 alias nrsd="npm run start:dev"
 alias nf="rm -rf node_modules/ package-lock.json && npm install"
 
-# Yarn
-alias yi="yarn install"
-alias yb="yarn build"
-
-# Nuxt
-alias nx="nuxt"
+# Git
+alias wip="git add . && git commit -m 'wip'"
 
 # Sitestein
 alias st="sitestein"
