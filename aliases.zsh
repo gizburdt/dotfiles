@@ -47,6 +47,7 @@ alias nf="rm -rf node_modules/ package-lock.json && npm install"
 
 # Git
 alias wip="git add . && git commit -m 'wip'"
+alias push="git push"
 
 # Sitestein
 alias st="sitestein"
