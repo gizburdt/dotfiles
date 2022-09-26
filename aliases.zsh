@@ -46,8 +46,9 @@ alias nrsd="npm run start:dev"
 alias nf="rm -rf node_modules/ package-lock.json && npm install"
 
 # Git
-alias wip="git add . && git commit -m 'wip'"
 alias push="git push"
+alias pull="git pull"
+alias wip="git add . && git commit -m 'wip'"
 alias wipp="wip && push"
 
 # Sitestein
