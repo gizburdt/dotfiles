@@ -36,15 +36,12 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td valign="top"><strong>System Preferences</strong></td>
         <td>
-            - Battery: Battery (5m), Power (10m)<br>
-            - Desktop: Wallpaper<br>
+            - Background: Wallpaper<br>
+            - Control Panel<br>
             - Display: Night Shift (22:00 - 08:00)<br>
-            - Keyboard: Touch Bar<br>
-            - Menubar: Control Panel<br>
+            - Lock Screen: Battery (5m), Power (10m)<br>
             - Notifications<br>
-            - Security: 1m after sleep<br>
-            - Trackpad: Gestures<br>
-            - Users: Apps On Startup
+            - Trackpad: Gestures
         </td>
     </tr>
     <tr>
@@ -66,13 +63,6 @@ Unfortunately, there are still some things we have to set manually:
         <td valign="top"><strong>Calendar</strong></td>
         <td>
             - Default Calendar
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>Time Machine</strong></td>
-        <td>
-            - Setup<br>
-            - Exceptions
         </td>
     </tr>
 </table>
