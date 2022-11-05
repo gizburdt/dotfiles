@@ -16,9 +16,7 @@ if [ "$answer" == "Remove" ]; then
     ps -ax | grep mysql
 
     # Stop
-    brew services stop mysql@5.7
     brew services stop mysql
-    brew remove mysql@5.7
     brew remove mysql
     brew cleanup
 
@@ -52,12 +50,12 @@ if [ "$answer" == "Install" ]; then
     # Brew
     brew doctor
     brew update
-    brew install mysql@5.7
-    brew link mysql@5.7 --force
+    brew install mysql
+    brew link mysql --force
 
     unset TMPDIR
 
     mysqld -initialize --verbose --user=whoami --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
 
-    brew services start mysql@5.7
+    brew services start mysql
 fi
