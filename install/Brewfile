@@ -28,7 +28,7 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Development
-brew 'mysql@5.7'
+brew 'mysql'
 brew 'nginx'
 brew 'node'
 brew 'php'
