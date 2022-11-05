@@ -32,8 +32,6 @@ brew 'mysql'
 brew 'nginx'
 brew 'node'
 brew 'php'
-brew 'php@8.0'
-brew 'php@7.4'
 brew 'redis'
 brew 'yarn'
 
