@@ -9,6 +9,9 @@ read email
 echo "What is the name of this computer?"
 read computerName
 
+# Ask for the administrator password upfront
+sudo -v
+
 echo "Setting up this Mac..."
 
 # Install Oh My Zsh
