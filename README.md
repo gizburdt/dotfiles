@@ -38,7 +38,7 @@ Unfortunately, there are still some things we have to set manually:
         <td>
             - Background: Wallpaper<br>
             - Control Panel<br>
-            - Display: Night Shift (22:00 - 08:00)<br>
+            - Display: Night Shift (22:00 - 09:00)<br>
             - Lock Screen: Battery (5m), Power (10m)<br>
             - Notifications<br>
             - Trackpad: Gestures
