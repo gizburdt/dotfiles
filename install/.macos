@@ -214,7 +214,7 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write com.apple.dock mru-spaces -bool false
 
 # Hot corner: show desktop on bottom left corner
-defaults write com.apple.dock wvous-bl-corner -int 4
+# defaults write com.apple.dock wvous-bl-corner -int 4
 
 ###############################################################################
 # Spotlight                                                                   #
