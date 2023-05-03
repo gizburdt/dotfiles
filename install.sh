@@ -43,13 +43,13 @@ mv composer.phar /usr/local/bin/composer
 /usr/local/bin/composer global require laravel/installer laravel/valet laravel/vapor-cli statamic/cli spatie/global-ray spatie/visit
 
 # Install NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+# Install global NPM packages
+npm install -g aicommits
 
 # Install Laravel Valet
 $HOME/.composer/vendor/bin/valet install
-
-# Install Ray
-global-ray install
 
 # Sublime
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime

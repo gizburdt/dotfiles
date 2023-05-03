@@ -1,6 +1,6 @@
 #!/bin/sh
 
-choices=("Install" "Remove")
+choices=("install" "remove")
 
 select answer in "${choices[@]}"; do
     for item in "${choices[@]}"; do
@@ -10,8 +10,8 @@ select answer in "${choices[@]}"; do
     done
 done
 
-if [ "$answer" == "Remove" ]; then
-    echo "Remove"
+if [ "$answer" == "remove" ]; then
+    echo "Removing..."
 
     ps -ax | grep mysql
 
@@ -42,8 +42,8 @@ if [ "$answer" == "Remove" ]; then
     sudo reboot
 fi
 
-if [ "$answer" == "Install" ]; then
-    echo "Install"
+if [ "$answer" == "install" ]; then
+    echo "Installing..."
 
     sudo rm -rf /usr/local/var/mysql/*
 

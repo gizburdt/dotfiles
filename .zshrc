@@ -14,9 +14,11 @@ ZSH_THEME_CLOUD_PREFIX="~"
 # Plugins
 plugins=(git)
 
-# Source
+# Dotfiles
 source $DOTFILES/aliases.zsh
 source $DOTFILES/path.zsh
+
+# ZSH
 source $ZSH/oh-my-zsh.sh
 
 # NVM

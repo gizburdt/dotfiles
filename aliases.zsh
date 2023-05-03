@@ -1,5 +1,6 @@
-# General
 alias ..="cd .."
+
+# General
 alias cpssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias fcli="source $HOME/.zshrc"
 alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
@@ -20,8 +21,8 @@ alias arliv="php artisan route:list"
 alias acc="php artisan cache:clear"
 alias ael="php artisan event:list"
 alias ah="php artisan horizon"
-alias ad="php artisan docs"
-alias adu="php artisan dusk"
+alias ad="php artisan dusk"
+alias adoc="php artisan docs"
 alias please="php please"
 
 # Composer
@@ -51,8 +52,8 @@ alias nf="rm -rf node_modules/ package-lock.json && npm install"
 # Git
 alias push="git push"
 alias pull="git pull"
-alias wip="git add . && git commit -m 'wip'"
-alias wipp="wip && push"
+alias wip="commit"
+alias wipp="commit && push"
 
 # Sitestein
 alias st="sitestein"
@@ -60,6 +61,20 @@ alias stp="sitestein publish"
 
 # PHPUnit
 alias pu="./vendor/bin/phpunit"
+
+# Commit
+function commit() {
+    commitMessage="$*"
+
+    git add .
+
+    if [ "$commitMessage" = "" ]; then
+        aicommits
+        return
+    fi
+
+    eval "git commit -a -m '${commitMessage}'"
+}
 
 # Weather
 weather() { curl -4 wttr.in/${1:-steenwijk} }
