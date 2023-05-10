@@ -76,6 +76,12 @@ function commit() {
     eval "git commit -a -m '${commitMessage}'"
 }
 
+# Meilisearch
+alias meilisearch="docker run -it --rm \
+  -p 7700:7700 \
+  -v $(pwd)/meili_data:/meili_data \
+  getmeili/meilisearch:v1.1"
+
 # Weather
 weather() { curl -4 wttr.in/${1:-steenwijk} }
 
