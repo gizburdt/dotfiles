@@ -57,7 +57,6 @@ alias nf="rm -rf node_modules/ package-lock.json && npm install"
 alias push="git push"
 alias pull="git pull"
 alias wip="commit"
-alias wipp="commit && push"
 
 # Sitestein
 alias st="sitestein"
@@ -69,6 +68,9 @@ alias pu="./vendor/bin/phpunit"
 ###############################################################################
 # Functions                                                                   #
 ###############################################################################
+
+# Git
+wipp() { commit "$1"; push; }
 
 # Code
 code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
