@@ -5,6 +5,10 @@ alias cpssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias fcli="source $HOME/.zshrc"
 alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
+# Dotfiles
+alias dot="cd ~/.dotfiles"
+alias edot="sublime ~/.dotfiles"
+
 # Short
 alias a="php artisan"
 alias c="composer"
@@ -62,8 +66,15 @@ alias stp="sitestein publish"
 # PHPUnit
 alias pu="./vendor/bin/phpunit"
 
+###############################################################################
+# Functions                                                                   #
+###############################################################################
+
+# Code
+code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
 # Commit
-function commit() {
+commit() {
     commitMessage="$*"
 
     git add .
@@ -77,16 +88,22 @@ function commit() {
 }
 
 # Meilisearch
-alias meilisearch="docker run -it --rm \
-  -p 7700:7700 \
-  -v $(pwd)/meili_data:/meili_data \
-  getmeili/meilisearch:v1.1"
+meilisearch() {
+    eval "open -a Docker";
+
+    while [[ -z "$(! docker stats --no-stream 2> /dev/null)" ]];
+        do printf ".";
+        sleep 1
+    done
+
+    eval "docker run -it --rm \
+        -p 7700:7700 \
+        -v $(pwd)/meili_data:/meili_data \
+        getmeili/meilisearch:v1.1"
+}
 
 # Weather
 weather() { curl -4 wttr.in/${1:-steenwijk} }
-
-# Code
-code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # QR
 qr() { curl qrcode.show/$1 }
@@ -114,11 +131,6 @@ opendb () {
     echo "Opening ${DB_URL}"
     open $DB_URL
 }
-
-# PHP
-alias php81="brew unlink php@8.0 php@7.4 && brew link --overwrite --force php"
-alias php80="brew unlink php@7.4 php && brew link --overwrite --force php@8.0"
-alias php74="brew unlink php@8.0 php && brew link --overwrite --force php@7.4"
 
 # Git
 gitbl () {
