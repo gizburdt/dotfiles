@@ -6,7 +6,7 @@ alias fcli="source $HOME/.zshrc"
 alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # Dotfiles
-alias dot="cd ~/.dotfiles"
+alias cdot="cd ~/.dotfiles"
 alias edot="sublime ~/.dotfiles"
 
 # Short
