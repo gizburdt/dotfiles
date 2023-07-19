@@ -56,7 +56,8 @@ alias nf="rm -rf node_modules/ package-lock.json && npm install"
 # Git
 alias push="git push"
 alias pull="git pull"
-alias wip="commit"
+alias wip="commit wip"
+alias wipp="commit wip && push"
 
 # Sitestein
 alias st="sitestein"
@@ -70,10 +71,7 @@ alias pu="./vendor/bin/phpunit"
 ###############################################################################
 
 # Git
-wipp() { commit "$1"; push; }
-
-# Code
-code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+commitp() { commit "$1"; push; }
 
 # Commit
 commit() {
@@ -88,6 +86,9 @@ commit() {
 
     eval "git commit -a -m '${commitMessage}'"
 }
+
+# Code
+code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
 # Meilisearch
 meilisearch() {
