@@ -113,8 +113,8 @@ qr() { curl qrcode.show/$1 }
 
 # IDE
 ide() {
-    php artisan ide-helper:generate
-    php artisan ide-helper:models
+    php artisan ide-helper:generate -W
+    php artisan ide-helper:models -M
     php artisan ide-helper:meta
 }
 
