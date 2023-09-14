@@ -60,12 +60,13 @@ alias pull="git pull"
 alias wip="commit wip"
 alias wipp="commit wip && push"
 
-# Sitestein
-alias st="sitestein"
-alias stp="sitestein publish"
-
 # PHPUnit
 alias pu="./vendor/bin/phpunit"
+
+# Other
+alias st="sitestein"
+alias stp="sitestein publish"
+alias mei="meilisearch"
 
 ###############################################################################
 # Functions                                                                   #
