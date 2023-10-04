@@ -36,13 +36,17 @@ alias ci="composer install"
 alias cii="composer install --ignore-platform-reqs"
 alias cu="composer update"
 alias cui="composer update --ignore-platform-reqs"
-alias ct="composer test"
 alias cb="composer bump"
 alias cbu="composer bump && composer update"
 alias cf="rm -rf vendor/ && composer install"
 alias cfi="rm -rf vendor/ && composer install --ignore-platform-reqs"
 alias cff="rm -rf vendor/ composer.lock && composer install"
 alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-reqs"
+
+# Test
+alias ct="composer test"
+alias at="artisan test"
+alias pt="pest --stop-on-error --parallel --order-by random"
 
 # NPM
 alias ni="npm install"
@@ -59,9 +63,6 @@ alias push="git push"
 alias pull="git pull"
 alias wip="commit wip"
 alias wipp="commit wip && push"
-
-# PHPUnit
-alias pu="./vendor/bin/phpunit"
 
 # Other
 alias st="sitestein"
