@@ -37,15 +37,14 @@ alias cii="composer install --ignore-platform-reqs"
 alias cu="composer update"
 alias cui="composer update --ignore-platform-reqs"
 alias cb="composer bump"
+alias ct="composer test"
 alias cbu="composer bump && composer update"
 alias cf="rm -rf vendor/ && composer install"
 alias cfi="rm -rf vendor/ && composer install --ignore-platform-reqs"
 alias cff="rm -rf vendor/ composer.lock && composer install"
 alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-reqs"
 
-# Test
-alias ct="composer test"
-alias at="artisan test"
+# Pest
 alias pt="pest --parallel --order-by random"
 alias pts="pest --parallel --order-by random --stop-on-error"
 
