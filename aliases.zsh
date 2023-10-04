@@ -27,6 +27,7 @@ alias acc="php artisan cache:clear"
 alias ael="php artisan event:list"
 alias ah="php artisan horizon"
 alias ad="php artisan dusk"
+alias at="php artisan test"
 alias adoc="php artisan docs"
 alias please="php please"
 
