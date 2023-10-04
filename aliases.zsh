@@ -46,7 +46,8 @@ alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-r
 # Test
 alias ct="composer test"
 alias at="artisan test"
-alias pt="pest --stop-on-error --parallel --order-by random"
+alias pt="pest --parallel --order-by random"
+alias pts="pest --parallel --order-by random --stop-on-error"
 
 # NPM
 alias ni="npm install"
