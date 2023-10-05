@@ -29,7 +29,6 @@ alias ah="php artisan horizon"
 alias ad="php artisan dusk"
 alias at="php artisan test"
 alias adoc="php artisan docs"
-alias please="php please"
 
 # Composer
 alias cda="composer dump-autoload -o"
@@ -49,6 +48,10 @@ alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-r
 alias pt="pest --parallel --order-by random"
 alias pts="pest --parallel --order-by random --stop-on-error"
 
+# Docker
+alias dcu="docker-compose up -d"
+alias dcd="docker-compose down"
+
 # NPM
 alias ni="npm install"
 alias nrw="npm run watch --quiet-deps"
@@ -66,6 +69,7 @@ alias wip="commit wip"
 alias wipp="commit wip && push"
 
 # Other
+alias please="php please"
 alias st="sitestein"
 alias stp="sitestein publish"
 alias mei="meilisearch"
