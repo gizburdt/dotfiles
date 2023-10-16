@@ -38,3 +38,6 @@ Thumbs.db
 .vagrant/
 *.sublime-*
 *.code-workspace
+
+# Other
+meili_data/
