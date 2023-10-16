@@ -110,7 +110,7 @@ meilisearch() {
     eval "docker run -it --rm \
         -p 7700:7700 \
         -v $(pwd)/meili_data:/meili_data \
-        getmeili/meilisearch:v1.1"
+        getmeili/meilisearch"
 }
 
 # Weather
