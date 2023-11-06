@@ -39,6 +39,8 @@ Thumbs.db
 *.sublime-*
 *.code-workspace
 _ide_helper*
+.phpstorm.meta*
+.phpactor.*
 
 # Other
 meili_data/
