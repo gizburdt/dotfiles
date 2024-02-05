@@ -1,6 +1,6 @@
 #!/bin/sh
 
-choices=("install" "remove")
+choices=("install" "remove" "start")
 
 select answer in "${choices[@]}"; do
     for item in "${choices[@]}"; do
@@ -9,6 +9,10 @@ select answer in "${choices[@]}"; do
         fi
     done
 done
+
+if [ "$answer" == "start" ]; then
+    brew services start mysql
+fi
 
 if [ "$answer" == "remove" ]; then
     echo "Removing..."
