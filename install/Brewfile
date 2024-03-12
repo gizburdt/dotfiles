@@ -6,7 +6,6 @@ tap 'homebrew/bundle'
 tap 'exolnet/homebrew-deprecated'
 
 # Binaries
-brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'bat'
 brew 'coreutils' # Those that come with macOS are outdated
@@ -27,14 +26,6 @@ brew 'zlib' # Needed for Memcached
 brew 'zsh'
 brew 'zsh-completions'
 
-# Development
-brew 'mysql'
-brew 'nginx'
-brew 'node'
-brew 'php'
-brew 'redis'
-brew 'yarn'
-
 # Apps
 cask '1password'
 cask '1password-cli'
@@ -50,6 +41,7 @@ cask 'figma'
 cask 'firefox'
 cask 'google-chrome'
 cask 'google-drive'
+cask 'herd'
 cask 'insomnia'
 cask 'iterm2'
 cask 'obsidian'

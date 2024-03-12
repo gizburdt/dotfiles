@@ -80,9 +80,6 @@ alias mei="meilisearch"
 # Functions                                                                   #
 ###############################################################################
 
-# Git
-commitp() { commit "$1"; push; }
-
 # Commit
 commit() {
     commitMessage="$*"
@@ -100,21 +97,6 @@ commit() {
 # Code
 code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
-# Meilisearch
-meilisearch() {
-    eval "open -a Docker";
-
-    while [[ -z "$(! docker stats --no-stream 2> /dev/null)" ]];
-        do printf ".";
-        sleep 1
-    done
-
-    eval "docker run -it --rm \
-        -p 7700:7700 \
-        -v $(pwd)/meili_data:/meili_data \
-        getmeili/meilisearch"
-}
-
 # Weather
 weather() { curl -4 wttr.in/${1:-steenwijk} }
 
@@ -122,30 +104,8 @@ weather() { curl -4 wttr.in/${1:-steenwijk} }
 qr() { curl qrcode.show/$1 }
 
 # IDE
-ide() {
+ideh() {
     php artisan ide-helper:generate -W
     php artisan ide-helper:models -M
     php artisan ide-helper:meta
-}
-
-# DB
-opendb () {
-    [ ! -f .env ] && { echo "No .env file found."; exit 1; }
-
-    DB_CONNECTION=$(grep ^DB_CONNECTION .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
-    DB_HOST=$(grep ^DB_HOST .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
-    DB_PORT=$(grep ^DB_PORT .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
-    DB_DATABASE=$(grep ^DB_DATABASE .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
-    DB_USERNAME=$(grep ^DB_USERNAME .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
-    DB_PASSWORD=$(grep ^DB_PASSWORD .env | grep -v -e '^\s*#' | cut -d '=' -f 2-)
-
-    DB_URL="${DB_CONNECTION}://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}"
-
-    echo "Opening ${DB_URL}"
-    open $DB_URL
-}
-
-# Git
-gitbl () {
-    for branch in `git branch -r | grep -v HEAD`;do echo -e `git show --format="%ci %cr" $branch | head -n 1` \\t$branch; done | sort -r
 }

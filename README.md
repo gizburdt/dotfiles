@@ -39,7 +39,7 @@ Unfortunately, there are still some things we have to set manually:
             - Background: Wallpaper<br>
             - Control Panel<br>
             - Display: Night Shift (22:00 - 08:00)<br>
-            - Lock Screen: Battery (5m), Power (10m)<br>
+            - Lock Screen: Battery (5m), Power (5m)<br>
             - Notifications<br>
             - Trackpad: Gestures
         </td>
@@ -63,18 +63,6 @@ Unfortunately, there are still some things we have to set manually:
         <td valign="top"><strong>Calendar</strong></td>
         <td>
             - Default Calendar
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>PHP</strong></td>
-        <td>
-            - Memory
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>MySQL</strong></td>
-        <td>
-            - Disable binlog
         </td>
     </tr>
 </table>

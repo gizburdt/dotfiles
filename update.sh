@@ -8,6 +8,3 @@ brew upgrade
 
 # Update global Composer packages
 /usr/local/bin/composer global update
-
-# Valet restart
-valet install

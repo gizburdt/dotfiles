@@ -32,24 +32,11 @@ brew bundle --file=$HOME/.dotfiles/install/Brewfile --verbose
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
-# Install PHP extensions with PECL
-pecl install memcached imagick redis
-
-# Install Composer
-curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/valet laravel/vapor-cli laravel-shift/cli statamic/cli spatie/global-ray spatie/visit
-
-# Install NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+/usr/local/bin/composer global require statamic/cli spatie/visit
 
 # Install global NPM packages
 npm install -g aicommits
-
-# Install Laravel Valet
-$HOME/.composer/vendor/bin/valet install
 
 # Sublime
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
