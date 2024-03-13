@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-echo "Run dock.sh"
+echo "Run .dock"
 
 # https://github.com/rpavlick/add_to_dock
 
 # Adds an application to macOS Dock
-# Usage: add_app_to_dock "Application Name"
-# Example add_app_to_dock "Terminal"
 function add_app_to_dock {
     app_path="${1}"
 
