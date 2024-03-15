@@ -42,7 +42,12 @@ Unfortunately, there are still some things we have to set manually:
             - Display: Night Shift (22:00 - 08:00)<br>
             - Lock Screen: Battery (5m), Power (5m)<br>
             - Notifications<br>
-            - Trackpad: Gestures
+            - Trackpad: Gestures<br>
+            - Keyboard<br>
+                - Correct spelling automatically<br>
+                - Capitalize words automatically<br>
+                - Add period with double-space<br>
+                - Smart quotes
         </td>
     </tr>
     <tr>
@@ -64,6 +69,12 @@ Unfortunately, there are still some things we have to set manually:
         <td valign="top"><strong>Calendar</strong></td>
         <td>
             - Default Calendar
+        </td>
+    </tr>
+    <tr>
+        <td valign="top"><strong>Notes</strong></td>
+        <td>
+            - Sort By Title
         </td>
     </tr>
 </table>
