@@ -21,12 +21,13 @@ If you did all of the above you may now follow these install instructions to set
 1. Update macOS to the latest version
 2. Install Xcode from the App Store, open it and accept the license agreement
 3. Install macOS Command Line Tools by running `xcode-select --install`
-4. Copy your public and private SSH keys to `~/.ssh` and make sure they're set to `600`
-5. Clone this repo to `~/.dotfiles`
-6. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
+4. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
+5. Copy your public and private SSH keys to `~/.ssh`
+6. Clone this repo to `~/.dotfiles`
 7. Run `install.sh` to start the installation
-8. Restore preferences by running `mackup restore`
-9. Restart your computer to finalize the process
+8. Start `Herd.app` and run its install process
+9. Restore preferences by running `mackup restore`
+10. Restart your computer to finalize the process
 
 ### After (not automated; opinionated)
 
