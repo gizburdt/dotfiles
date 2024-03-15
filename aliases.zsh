@@ -9,6 +9,10 @@ alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias cdot="cd ~/.dotfiles"
 alias edot="sublime ~/.dotfiles"
 
+# PHP
+alias composer="herd composer"
+alias php="herd php"
+
 # Short
 alias a="php artisan"
 alias c="composer"
@@ -75,37 +79,3 @@ alias please="php please"
 alias st="sitestein"
 alias stp="sitestein publish"
 alias mei="meilisearch"
-
-###############################################################################
-# Functions                                                                   #
-###############################################################################
-
-# Commit
-commit() {
-    commitMessage="$*"
-
-    git add .
-
-    if [ "$commitMessage" = "" ]; then
-        aicommits
-        return
-    fi
-
-    eval "git commit -a -m '${commitMessage}'"
-}
-
-# Code
-code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
-
-# Weather
-weather() { curl -4 wttr.in/${1:-steenwijk} }
-
-# QR
-qr() { curl qrcode.show/$1 }
-
-# IDE
-ideh() {
-    php artisan ide-helper:generate -W
-    php artisan ide-helper:models -M
-    php artisan ide-helper:meta
-}
