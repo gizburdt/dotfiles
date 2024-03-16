@@ -60,6 +60,7 @@ git config --global core.excludesfile $HOME/.dotfiles/.gitignore_global
 # Create directories
 mkdir $HOME/Server
 mkdir $HOME/System
+mkdir $HOME/Zulu
 
 # Symlink the Mackup config file to the home directory
 ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
