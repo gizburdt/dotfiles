@@ -16,6 +16,7 @@ alias php="herd php"
 # Short
 alias a="php artisan"
 alias c="composer"
+alias p="pest"
 alias n="npm"
 alias s="cd ~/Server"
 
