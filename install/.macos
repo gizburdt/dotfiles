@@ -632,21 +632,6 @@ defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool t
 open -a "Google Chrome" --args --make-default-browser
 
 ###############################################################################
-# Tweetbot.app                                                                #
-###############################################################################
-
-# Bypass the annoyingly slow t.co URL shortener
-defaults write com.tapbots.TweetbotMac OpenURLsDirectly -bool true
-
-###############################################################################
-# MicroSnitch                                                                 #
-###############################################################################
-
-# Disable notifications
-defaults write at.obdev.MicroSnitch ShowUserNotificationsForDeviceBecameActive -bool false
-defaults write at.obdev.MicroSnitch ShowUserNotificationsForDeviceBecameInactive -bool false
-
-###############################################################################
 # Zoom                                                                        #
 ###############################################################################
 
