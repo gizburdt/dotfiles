@@ -52,8 +52,9 @@ alias cff="rm -rf vendor/ composer.lock && composer install"
 alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-reqs"
 
 # Pest
-alias pt="pest --parallel --order-by random"
-alias pts="pest --parallel --order-by random --stop-on-error"
+alias pp="pest --parallel --order-by random"
+alias pps="pest --parallel --order-by random --stop-on-error"
+alias pc="herd coverage ./vendor/bin/pest --coverage"
 
 # Docker
 alias dcu="docker-compose up -d"
