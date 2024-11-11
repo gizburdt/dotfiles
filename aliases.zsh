@@ -55,6 +55,7 @@ alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-r
 alias pp="pest --parallel --order-by random"
 alias pps="pest --parallel --order-by random --stop-on-error"
 alias pc="herd coverage ./vendor/bin/pest --coverage"
+alias pch="herd coverage ./vendor/bin/pest --coverage-html reports/"
 
 # Docker
 alias dcu="docker-compose up -d"
