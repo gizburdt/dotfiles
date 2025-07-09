@@ -27,6 +27,7 @@ brew 'zsh-completions'
 
 # Development
 brew 'composer'
+brew 'gh'
 brew 'node'
 
 # Medialibrary
