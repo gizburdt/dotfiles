@@ -58,7 +58,7 @@ alias pp="pest --parallel --order-by random"
 alias pps="pest --parallel --order-by random --stop-on-error"
 alias pc="herd coverage ./vendor/bin/pest --coverage"
 alias pcr="herd coverage ./vendor/bin/pest --coverage-html reports/"
-alias pcro="open "$PWD"/reports/index.html"
+alias pcro="open reports/index.html"
 
 # Docker
 alias dcu="docker-compose up -d"
