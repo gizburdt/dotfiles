@@ -18,6 +18,7 @@ alias a="php artisan"
 alias c="composer"
 alias p="pest"
 alias n="npm"
+alias cl="claude"
 alias s="cd ~/Server"
 
 # Laravel
