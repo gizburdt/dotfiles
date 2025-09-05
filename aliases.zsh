@@ -67,10 +67,10 @@ alias dcd="docker-compose down"
 
 # NPM
 alias ni="npm install"
-alias nrw="npm run watch --quiet-deps"
-alias nrd="npm run dev --quiet-deps"
 alias nrp="npm run production"
 alias nrb="npm run build"
+alias nrw="nrp && npm run watch --quiet-deps"
+alias nrd="nrb && npm run dev --quiet-deps"
 alias nrs="npm run start"
 alias nrsd="npm run start:dev"
 alias nf="rm -rf node_modules/ package-lock.json && npm install"
