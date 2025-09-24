@@ -47,6 +47,7 @@ chsh -s $(which zsh)
 
 # Install global NPM packages
 npm install -g aicommits
+npm install -g @anthropic-ai/claude-code
 
 # Sublime
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
