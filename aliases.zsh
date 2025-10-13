@@ -38,6 +38,8 @@ alias ah="php artisan horizon"
 alias ahc="php artisan horizon:clear"
 alias ad="php artisan dusk"
 alias at="php artisan test"
+alias ab="php artisan boost"
+alias abu="php artisan boost:update"
 alias adoc="php artisan docs"
 
 # Composer
