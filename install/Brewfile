@@ -52,7 +52,6 @@ cask 'claude'
 cask 'devutils'
 cask 'discord'
 cask 'dropbox'
-cask 'evernote'
 cask 'figma'
 cask 'firefox'
 cask 'google-chrome'
@@ -100,3 +99,4 @@ cask 'font-source-code-pro'
 mas 'DaisyDisk', id: 411643860
 mas 'Medis', id: 1579200037
 mas 'Twitter', id: 1482454543
+mas 'UpNote', id: 1398373917
