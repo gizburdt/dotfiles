@@ -647,13 +647,13 @@ for app in "Activity Monitor" \
 	"Calendar" \
 	"cfprefsd" \
 	"Dock" \
-    "FaceTime" \
+  "FaceTime" \
 	"Finder" \
 	"Google Chrome" \
 	"Mail" \
 	"Messages" \
 	"Photos" \
-    "Reminders" \
+  "Reminders" \
 	"Safari" \
 	"SystemUIServer" \
 	"Tweetbot" \
@@ -661,4 +661,4 @@ for app in "Activity Monitor" \
 	killall "${app}" &> /dev/null
 done
 
-echo "Done. Run mackup restore. Reboot!"
+echo "Done. Reboot!"

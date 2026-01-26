@@ -30,24 +30,20 @@ fi
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/.dotfiles/home/.zshrc $HOME/.zshrc
 
 # Update Homebrew recipes
 brew update
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
-brew bundle --file=$HOME/.dotfiles/install/Brewfile --verbose
+brew bundle --file=$HOME/.dotfiles/config/Brewfile --verbose
 
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
 # Install global Composer packages
 /opt/homebrew/bin/composer global require laravel/installer laravel-shift/cli statamic/cli
-
-# Install global NPM packages
-npm install -g aicommits
-npm install -g @anthropic-ai/claude-code
 
 # Sublime
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
@@ -56,7 +52,7 @@ ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/loca
 touch $HOME/.gitconfig
 git config --global user.name $fullName
 git config --global user.email $email
-git config --global core.excludesfile $HOME/.dotfiles/.gitignore_global
+git config --global core.excludesfile $HOME/.dotfiles/home/.global-gitignore
 
 # Create directories
 mkdir $HOME/Server
@@ -67,8 +63,8 @@ mkdir $HOME/Zulu
 ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
 
 # Dock
-source $HOME/.dotfiles/install/.dock
+source $HOME/.dotfiles/config/.dock
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-source $HOME/.dotfiles/install/.macos $computerName
+source $HOME/.dotfiles/config/.macos $computerName

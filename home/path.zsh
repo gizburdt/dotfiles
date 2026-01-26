@@ -9,3 +9,6 @@ export PATH="node_modules/.bin:vendor/bin:$PATH"
 
 # Local
 export PATH="$HOME/.local/bin:$PATH"
+
+# Herd
+export PATH="/Users/Shared/Herd/services/mysql/8.0.36/bin:$PATH"

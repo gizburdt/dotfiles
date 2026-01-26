@@ -12,9 +12,9 @@ ZSH_THEME_CLOUD_PREFIX="~"
 plugins=(git)
 
 # Dotfiles
-source $DOTFILES/functions.zsh
-source $DOTFILES/aliases.zsh
-source $DOTFILES/path.zsh
+source $DOTFILES/home/functions.zsh
+source $DOTFILES/home/aliases.zsh
+source $DOTFILES/home/path.zsh
 
 # ZSH
 source $ZSH/oh-my-zsh.sh
@@ -23,5 +23,5 @@ source $ZSH/oh-my-zsh.sh
 export COMPOSER_MEMORY_LIMIT=-1
 
 ###############################################################################
-# Injected
+# Extra                                                                       #
 ###############################################################################

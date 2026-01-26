@@ -1,14 +1,7 @@
 # Commit
 commit() {
     commitMessage="$*"
-
     git add .
-
-    if [ "$commitMessage" = "" ]; then
-        aicommits
-        return
-    fi
-
     eval "git commit -a -m '${commitMessage}'"
 }
 
