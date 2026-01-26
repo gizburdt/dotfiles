@@ -41,7 +41,7 @@ brew update
 
 # Install Homebrew dependencies
 brew tap homebrew/bundle
-brew bundle --file=$HOME/.dotfiles/config/Brewfile --verbose
+brew bundle --file=$HOME/.dotfiles/lib/Brewfile --verbose
 
 # Install global Composer packages
 composer global require laravel/installer statamic/cli
@@ -55,8 +55,8 @@ mkdir $HOME/System
 mkdir $HOME/Zulu
 
 # Dock
-source $HOME/.dotfiles/config/.dock
+source $HOME/.dotfiles/lib/.dock
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-source $HOME/.dotfiles/config/.macos $computerName
+source $HOME/.dotfiles/lib/.macos $computerName

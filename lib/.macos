@@ -6,7 +6,7 @@ echo "Run .macos"
 # Check is all necessary arguments are set
 # $1 - Computer Name
 if [ "$1" == "" ]; then
-    echo "Computer name (first argument) required"
+    echo "Computer name required"
     exit 1;
 fi
 
