@@ -82,9 +82,11 @@ cask 'wkhtmltopdf'
 cask 'zoom'
 
 # Quicklook
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'quicklook-csv'
+cask "qlcolorcode"
+cask "qlstephen"
+cask "qlmarkdown"
+cask "quicklook-json"
+cask "quicklook-csv"
 
 # Fonts
 cask 'font-jetbrains-mono'
