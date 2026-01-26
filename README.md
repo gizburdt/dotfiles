@@ -1,10 +1,10 @@
 # Dotfiles
 
-### Installing macOS
+## Installing macOS
 
 Follow [this article](https://www.imore.com/how-do-clean-install-macos) to cleanly install the latest macOS version.
 
-### Setting up macOS
+## Setting up macOS
 
 1. Update macOS to the latest version
 2. Install Xcode from the App Store, open it and accept the license agreement
@@ -16,7 +16,7 @@ Follow [this article](https://www.imore.com/how-do-clean-install-macos) to clean
 8. Start `Herd.app` and run its install process
 10. Restart your computer to finalize the process
 
-### After (not automated; opinionated)
+## After (not automated; opinionated)
 
 Unfortunately, there are still some things we have to set manually:
 
