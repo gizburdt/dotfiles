@@ -13,7 +13,7 @@ if test ! $(which omz); then
     /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
-# Check for Homebrew and install if we don't have it
+# Install Homebrew
 if test ! $(which brew); then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -21,12 +21,12 @@ if test ! $(which brew); then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Symlink
+# Symlinks
 rm -f $HOME/.zshrc $HOME/.mackup.cfg
 ln -s $HOME/.dotfiles/home/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/home.mackup.cfg $HOME/.mackup.cfg
 
-# Make ZSH the default shell environment
+# ZSH as default
 chsh -s $(which zsh)
 
 # Git
@@ -44,7 +44,7 @@ brew tap homebrew/bundle
 brew bundle --file=$HOME/.dotfiles/config/Brewfile --verbose
 
 # Install global Composer packages
-/opt/homebrew/bin/composer global require laravel/installer statamic/cli
+composer global require laravel/installer statamic/cli
 
 # Sublime
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
