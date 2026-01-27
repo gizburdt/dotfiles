@@ -10,9 +10,9 @@ if [ "$1" == "" ]; then
     exit 1;
 fi
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
+# Close any open System Settings panes, to prevent them from overriding
+# settings we're about to change
+osascript -e 'tell application "System Settings" to quit'
 
 # Ask for the administrator password upfront
 sudo -v
@@ -24,17 +24,19 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName $1
-sudo scutil --set HostName $1
-sudo scutil --set LocalHostName $1
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $1
+# Set computer name (as done via System Settings → General → Sharing)
+sudo scutil --set ComputerName "$1"
+sudo scutil --set HostName "$1"
+sudo scutil --set LocalHostName "$1"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$1"
 
 # Set standby delay to 1 hour (default is 1 hour)
 sudo pmset -a standbydelay 3600
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+# Note: This only works on Intel Macs. On Apple Silicon, the startup sound
+# is controlled via System Settings → Sound → "Play sound on startup"
+sudo nvram SystemAudioVolume=" " 2>/dev/null || true
 
 # Disable CrashReporter
 defaults write com.apple.CrashReporter DialogType -string "none"
@@ -90,7 +92,8 @@ defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
 defaults write NSGlobalDomain ApplePersistence -bool false
 
 # Show battery percentage in toolbar
-defaults write com.apple.menuextra.battery ShowPercent -bool true
+# Note: Deprecated since macOS 12. Configure via System Settings → Control Center → Battery
+# defaults write com.apple.menuextra.battery ShowPercent -bool true
 
 # Set a custom wallpaper image
 # osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$HOME/.dotfiles/wallpaper-jwf.jpg"'
@@ -100,13 +103,14 @@ defaults write com.apple.menuextra.battery ShowPercent -bool true
 ###############################################################################
 
 # Increase sound quality for Bluetooth headphones/headsets
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool Min (editable)" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 80
-defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
+# Note: These settings may have limited effect on modern macOS with AAC/AirPods
+# defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
+# defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
+# defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool (editable)" 80
+# defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool Min (editable)" 80
+# defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool" 80
+# defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Max" 80
+# defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
 
 # Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
@@ -156,11 +160,13 @@ defaults write com.apple.screencapture type -string "png"
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
-# Enable subpixel font rendering on non-Apple LCDs
-# Reference: https://github.com/kevinSuttle/macOS-Defaults/issues/17#issuecomment-266633501
+# Font smoothing (subpixel rendering was removed in macOS Mojave for Retina displays)
+# 0 = disabled, 1 = light, 2 = medium, 3 = strong
+# This mainly affects non-Retina external displays now
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Enable HiDPI display modes (requires restart)
+# Note: This is enabled by default on modern macOS
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 ###############################################################################
@@ -188,7 +194,7 @@ defaults write com.apple.dock size-immutable -bool true
 defaults write com.apple.dock 'orientation' -string 'left'
 
 # No delay and less speed when auto-showing Dock
-defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.15
 
 # Change minimize/maximize window effect
@@ -314,24 +320,25 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# Note: These may fail on fresh installs if the plist keys don't exist yet
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
 
 # Increase grid spacing for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 20" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
 
 # Increase the size of icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 40" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
 
 # Remove all tags from contextual menu
-/usr/libexec/PlistBuddy -c "Delete :FavoriteTagNames" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Add :FavoriteTagNames array" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Add :FavoriteTagNames:0 string" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Delete :FavoriteTagNames" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Add :FavoriteTagNames array" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
+/usr/libexec/PlistBuddy -c "Add :FavoriteTagNames:0 string" ~/Library/Preferences/com.apple.finder.plist 2>/dev/null || true
 
 # Use column view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
@@ -374,7 +381,9 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# Note: `tmutil disablelocal` was removed in macOS 10.13. Local snapshots are
+# now managed automatically. Use `tmutil listlocalsnapshots /` to view them
+# and `tmutil deletelocalsnapshots <date>` to remove specific ones if needed.
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -503,10 +512,11 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Enable “focus follows mouse” for Terminal.app and all X11 apps
+# Enable "focus follows mouse" for Terminal.app and all X11 apps
 # i.e. hover over a window and start typing in it without clicking first
 defaults write com.apple.terminal FocusFollowsMouse -bool true
-defaults write org.x.X11 wm_ffm -bool true
+# Note: X11 is not bundled with macOS. Install XQuartz separately if needed.
+defaults write org.x.X11 wm_ffm -bool true 2>/dev/null || true
 
 # Enable Secure Keyboard Entry in Terminal.app
 # See: https://security.stackexchange.com/a/47786/8918
@@ -629,7 +639,8 @@ defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 defaults write com.google.Chrome.canary PMPrintingExpandedStateForPrint2 -bool true
 
 # Set as default browser
-open -a "Google Chrome" --args --make-default-browser
+# Note: This will prompt for user confirmation - cannot be fully automated
+open -a "Google Chrome" --args --make-default-browser 2>/dev/null || true
 
 ###############################################################################
 # Zoom                                                                        #
