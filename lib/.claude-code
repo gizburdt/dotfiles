@@ -5,13 +5,13 @@ echo "Run .claude-code"
 mkdir -p ~/.claude
 
 # Symlink configuration files
-ln -sf "$HOME/.dotfiles/home/.claude/CLAUDE.md" ~/.claude/CLAUDE.md
-ln -sf "$HOME/.dotfiles/home/.claude/settings.json" ~/.claude/settings.json
+ln -sf "$HOME/.dotfiles/home/claude/CLAUDE.md" ~/.claude/CLAUDE.md
+ln -sf "$HOME/.dotfiles/home/claude/settings.json" ~/.claude/settings.json
 
 # Symlink entire skills directory
 rm -rf ~/.claude/skills
-ln -sf "$HOME/.dotfiles/home/.claude/skills" ~/.claude/skills
+ln -sf "$HOME/.dotfiles/home/claude/skills" ~/.claude/skills
 
 # Symlink entire agents directory
 rm -rf ~/.claude/agents
-ln -sf "$HOME/.dotfiles/home/.claude/agents" ~/.claude/agents
+ln -sf "$HOME/.dotfiles/home/claude/agents" ~/.claude/agents
