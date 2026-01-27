@@ -36,14 +36,12 @@ git config --global user.email $email
 git config --global core.excludesfile $HOME/.dotfiles/home/.global-gitignore
 git config --global init.defaultBranch master
 
-# Update Homebrew
+# Homebrew dependencies
 brew update
-
-# Install Homebrew dependencies
 brew tap homebrew/bundle
 brew bundle --file=$HOME/.dotfiles/lib/Brewfile --verbose
 
-# Install global Composer packages
+# Global Composer packages
 composer global require laravel/installer statamic/cli
 
 # Sublime
@@ -54,9 +52,11 @@ mkdir $HOME/Server
 mkdir $HOME/System
 mkdir $HOME/Zulu
 
+# Claude Code
+source $HOME/.dotfiles/lib/.claude-code
+
 # Dock
 source $HOME/.dotfiles/lib/.dock
 
-# Set macOS preferences
-# We will run this last because this will reload the shell
+# macOS
 source $HOME/.dotfiles/lib/.macos $computerName
