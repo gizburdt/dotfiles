@@ -41,6 +41,7 @@ Thumbs.db
 _ide_helper*
 .phpstorm.meta*
 .phpactor.*
+.claude/*.local.*
 
 # Other
 meili_data/

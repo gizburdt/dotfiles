@@ -17,5 +17,7 @@ rm -rf ~/.claude/agents
 ln -sf "$HOME/.dotfiles/home/claude/agents" ~/.claude/agents
 
 # MCP
-claude mcp add chrome-devtools --scope user npx chrome-devtools-mcp@latest
-claude mcp add playwright npx @playwright/mcp@latest
+claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
+claude mcp add --scope user playwright npx @playwright/mcp@latest
+claude mcp add --scope user --transport http flare https://flareapp.io/mcp --header "Authorization: Bearer <INSERT-YOUR-TOKEN-HERE>"
+claude mcp add-json --scope user github '{"type":"http","url":"https://api.githubcopilot.com/mcp","headers":{"Authorization":"Bearer <YOUR_GITHUB_TOKEN>"}}'
