@@ -1,8 +1,4 @@
 {
-  "enabledPlugins": {
-    "laravel-simplifier@laravel": true
-  },
-  "alwaysThinkingEnabled": true,
   "permissions": {
     "allow": [
       "Bash(composer:*)",
@@ -49,5 +45,9 @@
       "mcp__nightwatch__*",
       "mcp__playwright__*"
     ]
-  }
+  },
+  "enabledPlugins": {
+    "laravel-simplifier@laravel": true
+  },
+  "alwaysThinkingEnabled": true
 }

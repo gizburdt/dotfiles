@@ -14,12 +14,15 @@ alias composer="herd composer"
 alias php="herd php"
 
 # Short
+alias cl="claude"
 alias a="php artisan"
 alias c="composer"
 alias p="pest"
 alias n="npm"
-alias cl="claude"
 alias s="cd ~/Server"
+
+# Claude
+alias clr="claude remote-control"
 
 # Laravel
 alias am="php artisan migrate"
