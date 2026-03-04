@@ -46,6 +46,10 @@
       "mcp__playwright__*"
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
   "enabledPlugins": {
     "laravel-simplifier@laravel": true
   },
