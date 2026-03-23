@@ -44,7 +44,6 @@ add_app_to_dock "/Applications/Google Chrome.app"
 add_app_to_dock "/Applications/Slack.app"
 add_app_to_dock "/Applications/WhatsApp.app"
 add_app_to_dock "/Applications/Spotify.app"
-add_app_to_dock "/Applications/Twitter.app"
 add_spacer_to_dock
 
 # Restart
