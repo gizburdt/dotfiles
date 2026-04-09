@@ -1,7 +1,4 @@
 # Taps
-tap 'homebrew/cask-versions'
-tap 'homebrew/bundle'
-tap 'exolnet/homebrew-deprecated'
 tap 'nicoverbruggen/homebrew-cask'
 
 # Binaries
@@ -9,15 +6,13 @@ brew 'bash' # Latest Bash version
 brew 'bat'
 brew 'coreutils' # Those that come with macOS are outdated
 brew 'git'
-brew 'gnupg2'
+brew 'gnupg'
 brew 'grep'
 brew 'httpie'
-brew 'hub'
 brew 'jq'
 brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config'
-brew 'svn'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'unrar'
@@ -71,13 +66,6 @@ cask 'visual-studio-code'
 cask 'vlc'
 cask 'whatsapp'
 cask 'zoom'
-
-# Quicklook
-cask "qlcolorcode"
-cask "qlstephen"
-cask "qlmarkdown"
-cask "quicklook-json"
-cask "quicklook-csv"
 
 # Fonts
 cask 'font-jetbrains-mono'

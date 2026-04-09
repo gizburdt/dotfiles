@@ -68,8 +68,8 @@ alias pcr="herd coverage ./vendor/bin/pest --coverage-html reports/"
 alias pcro="open reports/index.html"
 
 # Docker
-alias dcu="docker-compose up -d"
-alias dcd="docker-compose down"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
 
 # NPM
 alias ni="npm install"

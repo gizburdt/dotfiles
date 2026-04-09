@@ -667,7 +667,6 @@ for app in "Activity Monitor" \
   "Reminders" \
 	"Safari" \
 	"SystemUIServer" \
-	"Tweetbot" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done

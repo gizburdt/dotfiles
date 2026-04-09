@@ -24,28 +24,28 @@ fi
 # Symlinks
 rm -f $HOME/.zshrc $HOME/.mackup.cfg
 ln -s $HOME/.dotfiles/home/.zshrc $HOME/.zshrc
-ln -s $HOME/.dotfiles/home.mackup.cfg $HOME/.mackup.cfg
+ln -s $HOME/.dotfiles/home/.mackup.cfg $HOME/.mackup.cfg
 
 # ZSH as default
 chsh -s $(which zsh)
 
 # Git
 touch $HOME/.gitconfig
-git config --global user.name $fullName
-git config --global user.email $email
+git config --global user.name "$fullName"
+git config --global user.email "$email"
 git config --global core.excludesfile $HOME/.dotfiles/home/.global-gitignore
 git config --global init.defaultBranch master
 
 # Homebrew dependencies
 brew update
-brew tap homebrew/bundle
 brew bundle --file=$HOME/.dotfiles/lib/Brewfile --verbose
 
 # Global Composer packages
 composer global require laravel/installer statamic/cli
 
 # Sublime
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+mkdir -p /usr/local/bin
+ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 
 # Create directories
 mkdir $HOME/Server
