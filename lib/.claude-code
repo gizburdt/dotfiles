@@ -17,6 +17,13 @@ ln -sf "$HOME/.dotfiles/home/claude/skills" ~/.claude/skills
 rm -rf ~/.claude/agents
 ln -sf "$HOME/.dotfiles/home/claude/agents" ~/.claude/agents
 
+# Marketplaces
+claude plugin marketplace add laravel/claude-code
+
+# Plugins
+claude plugin install superpowers@claude-plugins-official
+claude plugin install laravel-simplifier@laravel
+
 # MCP
 claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
 claude mcp add --scope user playwright npx @playwright/mcp@latest

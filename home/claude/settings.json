@@ -49,8 +49,17 @@
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "laravel-simplifier@laravel": true
+    "laravel-simplifier@laravel": true,
+    "superpowers@claude-plugins-official": true
   },
   "alwaysThinkingEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "extraKnownMarketplaces": {
+    "laravel": {
+      "source": {
+        "source": "github",
+        "repo": "laravel/claude-code"
+      }
+    }
+  }
 }
