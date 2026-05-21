@@ -9,7 +9,7 @@ Follow [this article](https://www.imore.com/how-do-clean-install-macos) to clean
 1. Update macOS to the latest version
 2. Install Xcode from the App Store, open it and accept the license agreement
 3. Install macOS Command Line Tools by running `xcode-select --install`
-4. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
+4. Append `/opt/homebrew/bin/zsh` to the end of your `/etc/shells` file
 5. Copy your public and private SSH keys to `~/.ssh`
 6. Clone this repo to `~/.dotfiles`
 7. Run `bin/install.sh` to start the installation

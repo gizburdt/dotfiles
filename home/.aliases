@@ -21,9 +21,6 @@ alias p="pest"
 alias n="npm"
 alias s="cd ~/Server"
 
-# Claude
-alias clr="claude remote-control"
-
 # Laravel
 alias am="php artisan migrate"
 alias ams="php artisan migrate --seed"

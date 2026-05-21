@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 read -p "What is your full name? " fullName
 read -p "What is your e-mail address? " email
@@ -9,12 +9,12 @@ sudo -v
 echo "Setting up this Mac..."
 
 # Install Oh My Zsh
-if test ! $(which omz); then
+if ! command -v omz >/dev/null 2>&1; then
     /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
 # Install Homebrew
-if test ! $(which brew); then
+if ! command -v brew >/dev/null 2>&1; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
@@ -48,9 +48,9 @@ mkdir -p /usr/local/bin
 ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 
 # Create directories
-mkdir $HOME/Server
-mkdir $HOME/System
-mkdir $HOME/Zulu
+mkdir -p $HOME/Server
+mkdir -p $HOME/System
+mkdir -p $HOME/Zulu
 
 # Claude Code
 source $HOME/.dotfiles/lib/.claude-code
