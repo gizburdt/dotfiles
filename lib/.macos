@@ -535,9 +535,6 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 # Sorting by First Name, then Last Name
 defaults write com.apple.AddressBook ABNameSortingFormat -string "sortingFirstName sortingLastName"
 
-# Enable the debug menu in Address Book
-defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
 # Disable Siri Suggestions
 defaults write com.apple.suggestions AppCanShowSiriSuggestionsBlacklist -array "com.apple.AddressBook"
 
@@ -549,9 +546,6 @@ defaults write com.apple.suggestions AppCanShowSiriSuggestionsBlacklist -array "
 defaults write com.apple.iCal "number of hours displayed" -int 16
 defaults write com.apple.iCal "display birthdays calendar" -bool true
 defaults write com.apple.iCal "Show Week Numbers" -bool true
-
-# Enable the debug menu in iCal (pre-10.8)
-defaults write com.apple.iCal IncludeDebugMenu -bool true
 
 ###############################################################################
 # Reminders, FaceTime, TextEdit, Disk Utility, QuickTime                      #
@@ -569,22 +563,12 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
-# Enable the debug menu in Disk Utility
-defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-defaults write com.apple.DiskUtility advanced-image-options -bool true
-
 # Auto-play videos when opened with QuickTime Player
 defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
 
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
-
-# Enable the WebKit Developer Tools in the Mac App Store
-defaults write com.apple.appstore WebKitDeveloperExtras -bool true
-
-# Enable Debug Menu in the Mac App Store
-defaults write com.apple.appstore ShowDebugMenu -bool true
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
@@ -613,9 +597,6 @@ defaults write com.apple.commerce AutoUpdateRestartRequired -bool false
 
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-# Default folders
-defaults write com.apple.Photos IPXDefaultLastSavedDirectoryForPhotoLibrary -string "~/System";
 
 ###############################################################################
 # Messages                                                                    #
