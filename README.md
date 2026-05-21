@@ -16,7 +16,7 @@ Follow [this article](https://www.imore.com/how-do-clean-install-macos) to clean
 8. Start `Herd.app` and run its install process
 9. Restart your computer to finalize the process
 
-## After (not automated; opinionated)
+## After (opinionated)
 
 Unfortunately, there are still some things we have to set manually:
 
@@ -46,7 +46,8 @@ Unfortunately, there are still some things we have to set manually:
         <td>
             - Calendar<br>
             - Reminders<br>
-            - Weather
+            - Weather<br>
+            - Battery
         </td>
     </tr>
     <tr>
