@@ -24,21 +24,9 @@ Unfortunately, there are still some things we have to set manually:
     <tr>
         <td valign="top"><strong>System Preferences</strong></td>
         <td>
-            - Background: Wallpaper<br>
-            - Control Panel<br>
+            - Control Center<br>
             - Display: Night Shift (22:00 - 08:00)<br>
-            - Lock Screen: Battery (5m), Power (5m)<br>
-            - Notifications<br>
-            - Trackpad: Gestures
-        </td>
-    </tr>
-    <tr>
-        <td valign="top"><strong>Keyboard</strong></td>
-        <td>
-            - Correct spelling automatically<br>
-            - Capitalize words automatically<br>
-            - Add period with double-space<br>
-            - Smart quotes
+            - Notifications
         </td>
     </tr>
     <tr>

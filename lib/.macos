@@ -96,7 +96,7 @@ defaults write NSGlobalDomain ApplePersistence -bool false
 # defaults write com.apple.menuextra.battery ShowPercent -bool true
 
 # Set a custom wallpaper image
-# osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$HOME/.dotfiles/wallpaper-jwf.jpg"'
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$HOME/.dotfiles/images/wallpaper-jwf.jpg\"" 2>/dev/null || true
 
 ###############################################################################
 # Trackpad, Mouse, Keyboard, Bluetooth accessories, and Input                 #
@@ -114,6 +114,15 @@ defaults write NSGlobalDomain ApplePersistence -bool false
 
 # Disable “natural” (Lion-style) scrolling
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
+# Disable tap to click
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool false
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool false
+
+# Swipe between pages with three fingers (instead of two)
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
 # Disable "shake to find mouse"
 defaults write NSGlobalDomain CGDisableCursorLocationMagnification -bool true
@@ -179,6 +188,10 @@ sudo pmset -a halfdim 0
 
 # Wake computer when laptop is opened
 sudo pmset -a lidwake 1
+
+# Lock screen display sleep: 5 minutes on battery and on power
+sudo pmset -b displaysleep 5
+sudo pmset -c displaysleep 5
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
@@ -284,6 +297,10 @@ sudo mdutil -E / > /dev/null
 
 # Finder: disable window animations and Get Info animations
 defaults write com.apple.finder DisableAllAnimations -bool true
+
+# Show path bar and status bar
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
 
 # Set $HOME as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`

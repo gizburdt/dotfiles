@@ -41,16 +41,16 @@ brew update
 brew bundle --file=$HOME/.dotfiles/lib/Brewfile --verbose
 
 # Global Composer packages
-composer global require laravel/installer statamic/cli
-
-# Sublime
-mkdir -p /usr/local/bin
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
+composer global require laravel/installer
 
 # Create directories
 mkdir -p $HOME/Server
 mkdir -p $HOME/System
 mkdir -p $HOME/Zulu
+
+# Sublime
+mkdir -p /usr/local/bin
+ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime
 
 # Claude Code
 source $HOME/.dotfiles/lib/.claude-code
