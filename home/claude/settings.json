@@ -52,8 +52,6 @@
     "laravel-simplifier@laravel": true,
     "superpowers@claude-plugins-official": true
   },
-  "alwaysThinkingEnabled": true,
-  "skipAutoPermissionPrompt": true,
   "extraKnownMarketplaces": {
     "laravel": {
       "source": {
@@ -61,5 +59,7 @@
         "repo": "laravel/claude-code"
       }
     }
-  }
+  },
+  "alwaysThinkingEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
