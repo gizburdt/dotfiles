@@ -21,10 +21,11 @@ ln -sf "$HOME/.dotfiles/home/claude/agents" ~/.claude/agents
 claude plugin marketplace add laravel/claude-code
 
 # Plugins
-claude plugin install superpowers@claude-plugins-official
+claude plugin install chrome-devtools-mcp@claude-plugins-official
+claude plugin install context7@claude-plugins-official
 claude plugin install frontend-design@claude-plugins-official
 claude plugin install laravel-simplifier@laravel
-
-# MCP
-claude mcp add --scope user chrome-devtools npx chrome-devtools-mcp@latest
-claude mcp add --scope user playwright npx @playwright/mcp@latest
+claude plugin install playwright@claude-plugins-official
+claude plugin install security-guidance@claude-plugins-official
+claude plugin install skill-creator@claude-plugins-official
+claude plugin install superpowers@claude-plugins-official
