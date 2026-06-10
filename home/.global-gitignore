@@ -41,10 +41,12 @@ Thumbs.db
 _ide_helper*
 .phpstorm.meta*
 .phpactor.*
+.phpunit.cache
 
 # AI
-.claude/*.local.*
+**/.claude/settings.local.json
 .playwright-mcp
+.superpowers
 
 # Other
 meili_data/
