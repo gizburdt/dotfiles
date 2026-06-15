@@ -19,8 +19,10 @@ ln -sf "$HOME/.dotfiles/home/claude/agents" ~/.claude/agents
 
 # Marketplaces
 claude plugin marketplace add laravel/claude-code
+claude plugin marketplace add JuliusBrussee/caveman
 
 # Plugins
+claude plugin install caveman@caveman
 claude plugin install chrome-devtools-mcp@claude-plugins-official
 claude plugin install context7@claude-plugins-official
 claude plugin install frontend-design@claude-plugins-official
