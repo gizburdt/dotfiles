@@ -64,13 +64,15 @@
       "source": {
         "source": "github",
         "repo": "laravel/claude-code"
-      }
+      },
+      "autoUpdate": true
     },
     "caveman": {
       "source": {
         "source": "github",
         "repo": "JuliusBrussee/caveman"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "alwaysThinkingEnabled": true,
