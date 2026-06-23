@@ -44,7 +44,10 @@
       "mcp__context7__*",
       "mcp__herd__*",
       "mcp__laravel-boost__*",
-      "mcp__playwright__*"
+      "mcp__playwright__*",
+      "mcp__plugin_chrome-devtools-mcp_chrome-devtools__*",
+      "mcp__plugin_context7-mcp_context7__*",
+      "mcp__plugin_playwright-mcp_playwright__*"
     ],
     "defaultMode": "default"
   },
