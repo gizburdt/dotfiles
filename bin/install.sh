@@ -41,7 +41,7 @@ brew update
 brew bundle --file=$HOME/.dotfiles/lib/Brewfile --verbose
 
 # Global Composer packages
-composer global require laravel/installer
+composer global require laravel/installer cpx/cpx
 
 # Create directories
 mkdir -p $HOME/Server
