@@ -84,6 +84,6 @@
     }
   },
   "alwaysThinkingEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": false,
+  "skipAutoPermissionPrompt": true
 }
