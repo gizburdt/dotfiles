@@ -239,6 +239,16 @@ defaults write com.apple.dock mru-spaces -bool false
 # defaults write com.apple.dock wvous-bl-corner -int 4
 
 ###############################################################################
+# Handoff / Continuity                                                        #
+###############################################################################
+
+# Disable Handoff, so handed-off apps stop showing up in the Dock, the app
+# switcher, Launchpad and Spotlight results.
+# These are ByHost preferences, hence `-currentHost`.
+defaults -currentHost write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool false
+defaults -currentHost write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool false
+
+###############################################################################
 # Spotlight                                                                   #
 ###############################################################################
 
@@ -588,6 +598,7 @@ for app in "Activity Monitor" \
     "Reminders" \
 	"Safari" \
 	"SystemUIServer" \
+	"useractivityd" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done
