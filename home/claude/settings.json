@@ -54,7 +54,8 @@
   "model": "sonnet",
   "statusLine": {
     "type": "command",
-    "command": "~/.claude/statusline.sh"
+    "command": "~/.claude/statusline.sh",
+    "timeout": 10
   },
   "enabledPlugins": {
     "laravel-simplifier@laravel": true,
