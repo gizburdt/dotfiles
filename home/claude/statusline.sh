@@ -150,43 +150,7 @@ pct_int=${pct_int:-0}
 if (( pct_int < 0 )); then pct_int=0; fi
 if (( pct_int > 100 )); then pct_int=100; fi
 
-bar_filled=$(( pct_int / 10 ))
-if (( bar_filled > 10 )); then bar_filled=10; fi
-
-# Gradient colors (true color): green -> yellow -> orange -> red
-GRAD_R=(46 116 186 241 239 236 233 231 211 192)
-GRAD_G=(204 195 186 196 161 126 101 76 66 57)
-GRAD_B=(113 89 64 15 24 34 44 60 50 43)
-
-bar=""
-if [[ "$USE_ASCII" == "1" ]]; then
-  # ASCII mode
-  for (( i=0; i<10; i++ )); do
-    if (( i < bar_filled )); then bar+="#"; else bar+="-"; fi
-  done
-elif (( USE_TRUECOLOR )); then
-  # True-color gradient: each block colored independently
-  for (( i=0; i<10; i++ )); do
-    if (( i < bar_filled )); then
-      bar+="\\033[38;2;${GRAD_R[$i]};${GRAD_G[$i]};${GRAD_B[$i]}m█"
-    else
-      bar+="\\033[38;2;60;60;60m░"
-    fi
-  done
-  bar+="${RST}"
-else
-  # ANSI fallback: pick color based on overall percentage
-  if (( pct_int >= 90 )); then bar_color="$RED"
-  elif (( pct_int >= 70 )); then bar_color="$YELLOW"
-  else bar_color="$GREEN"; fi
-
-  for (( i=0; i<10; i++ )); do
-    if (( i < bar_filled )); then bar+="█"; else bar+="░"; fi
-  done
-  bar="${bar_color}${bar}${RST}"
-fi
-
-# Percentage text color (matches overall progress bar color)
+# Percentage text color
 if (( pct_int >= 90 )); then pct_color="$RED"
 elif (( pct_int >= 70 )); then pct_color="$YELLOW"
 else pct_color="$GREEN"; fi
@@ -201,36 +165,6 @@ ctx_label=""
 if [[ "$model" != *context* && "$model" != *Context* ]]; then
   if (( ctx_size_int >= 1000000 )); then ctx_label=" ${GRAY}1M${RST}"
   elif (( ctx_size_int >= 200000 )); then ctx_label=" ${GRAY}200k${RST}"
-  fi
-fi
-
-# ═══════════════════════════════════════════════════════════════
-# Cost
-# ═══════════════════════════════════════════════════════════════
-
-cost_val="${cost:-0}"
-cost_fmt=$(printf '%.2f' "$cost_val" 2>/dev/null || echo "0.00")
-cost_int=${cost_val%.*}
-cost_int=${cost_int:-0}
-
-if (( cost_int >= 10 )); then cost_color="$RED"
-elif (( cost_int >= 5 )); then cost_color="$YELLOW"
-elif [[ "$cost_fmt" == "0.00" ]]; then cost_color="$GRAY"
-else cost_color="$YELLOW"; fi
-
-# ═══════════════════════════════════════════════════════════════
-# Elapsed time (smart-hidden when zero)
-# ═══════════════════════════════════════════════════════════════
-
-dur_ms=${duration_ms:-0}
-dur_section=""
-if (( dur_ms > 0 )); then
-  dur_sec=$((dur_ms / 1000))
-  dur_min=$((dur_sec / 60))
-  dur_s=$((dur_sec % 60))
-  # Skip display if it still formats to 0m0s (dur_ms may be a few hundred ms early in the session)
-  if (( dur_min > 0 || dur_s > 0 )); then
-    dur_section="${SEP}${GRAY}${S_TIME}${dur_min}m${dur_s}s${RST}"
   fi
 fi
 
@@ -279,17 +213,6 @@ if [[ -n "${cwd_full:-}" && -d "${cwd_full:-}" ]]; then
 fi
 
 # ═══════════════════════════════════════════════════════════════
-# Lines added/removed (smart-hidden when zero)
-# ═══════════════════════════════════════════════════════════════
-
-lines_add=${lines_add:-0}
-lines_rm=${lines_rm:-0}
-lines_section=""
-if (( lines_add > 0 || lines_rm > 0 )); then
-  lines_section="${GREEN}+${lines_add}${RST}/${RED}-${lines_rm}${RST}"
-fi
-
-# ═══════════════════════════════════════════════════════════════
 # Rate limits (conditional display)
 # ═══════════════════════════════════════════════════════════════
 
@@ -297,18 +220,12 @@ rate_section=""
 rate5h_int=${rate5h%.*}; rate5h_int=${rate5h_int:-0}
 rate7d_int=${rate7d%.*}; rate7d_int=${rate7d_int:-0}
 
-rate_parts=""
-if (( rate5h_int >= 0 )); then
-  if (( rate5h_int >= 80 )); then rate_parts+="${RED}5h:${rate5h_int}%${RST}"
-  else rate_parts+="${GRAY}5h:${rate5h_int}%${RST}"; fi
-fi
-if (( rate7d_int >= 0 )); then
-  if [[ -n "$rate_parts" ]]; then rate_parts+=" "; fi
-  if (( rate7d_int >= 80 )); then rate_parts+="${RED}7d:${rate7d_int}%${RST}"
-  else rate_parts+="${GRAY}7d:${rate7d_int}%${RST}"; fi
-fi
-if [[ -n "$rate_parts" ]]; then
-  rate_section="${SEP}${rate_parts}"
+if (( rate5h_int >= 0 || rate7d_int >= 0 )); then
+  if (( rate5h_int >= 80 )); then rate5h_str="${RED}${rate5h_int}%${RST}"
+  else rate5h_str="${GRAY}${rate5h_int}%${RST}"; fi
+  if (( rate7d_int >= 80 )); then rate7d_str="${RED}${rate7d_int}%${RST}"
+  else rate7d_str="${GRAY}${rate7d_int}%${RST}"; fi
+  rate_section="${SEP}${rate5h_str} / ${rate7d_str}"
 fi
 
 # ═══════════════════════════════════════════════════════════════
@@ -324,9 +241,7 @@ else prompt_color="$GREEN"; fi
 # ═══════════════════════════════════════════════════════════════
 
 line1="${PURPLE}${S_BRAND}${RST} ${CYAN}${model}${RST}"
-line1+="${SEP}${bar} ${pct_color}${pct_int}%${RST}${ctx_warn}${ctx_label}"
-line1+="${SEP}${cost_color}${S_COST}\$${cost_fmt}${RST}"
-line1+="${dur_section}"
+line1+="${SEP}${pct_color}${pct_int}%${RST}${ctx_warn}${ctx_label}"
 line1+="${rate_section}"
 
 # ═══════════════════════════════════════════════════════════════
@@ -336,9 +251,6 @@ line1+="${rate_section}"
 parts=()
 if [[ -n "$git_branch" ]]; then
   parts+=("${GRAY}${S_BRANCH}${git_branch}${dirty}${RST}")
-fi
-if [[ -n "$lines_section" ]]; then
-  parts+=("${lines_section}")
 fi
 parts+=("${BLUE}${dir}${RST}")
 
@@ -361,5 +273,4 @@ done
 # Output
 # ═══════════════════════════════════════════════════════════════
 
-# Only output two lines (Claude Code has its own input prompt, no need for our ❯)
-printf '%b\n%b' "$line1" "$line2"
+printf '%b%b%b' "$line1" "$SEP" "$line2"
