@@ -21,6 +21,7 @@ brew 'zsh'
 brew 'zsh-completions'
 
 # Development
+brew 'act'
 brew 'composer'
 brew 'gh'
 brew 'node'
