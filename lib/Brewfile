@@ -73,5 +73,6 @@ cask 'font-source-code-pro'
 
 # Mac App Store
 mas 'DaisyDisk', id: 411643860
+mas 'DigiD', id: 1208460960
 mas 'Medis', id: 1579200037
 mas 'UpNote', id: 1398373917
