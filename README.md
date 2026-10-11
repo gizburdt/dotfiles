@@ -13,7 +13,7 @@ Follow [this article](https://www.imore.com/how-do-clean-install-macos) to clean
 5. Copy your public and private SSH keys to `~/.ssh`
 6. Clone this repo to `~/.dotfiles`
 7. Run `bin/install.sh` to start the installation
-8. Start `Herd.app` and run its install process
+8. Install [Yerd](https://yerd.io), run its install process
 9. Restart your computer to finalize the process
 
 ## After (opinionated)

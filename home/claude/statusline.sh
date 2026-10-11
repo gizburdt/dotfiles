@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 # ~/.claude/statusline.sh — Claude Code session status line (aesthetic edition)
 #
-# Three-line output:
-#   Line 1: ◆ model │ gradient progress bar percentage │ cost │ time │ rate limits
-#   Line 2: ⎇branch* │ +added/-removed │ dir
-#   Line 3: ❯ prompt (color tied to context usage)
+# Single-line output:
+#   ◆ model │ context % │ 5h / 7d rate limits │ ⎇branch* │ dir │ worktree/agent
 #
 # Environment variables:
 #   CLAUDE_STATUSLINE_ASCII=1     fall back to plain ASCII
@@ -52,17 +50,11 @@ if [[ "$USE_ASCII" == "1" ]]; then
   S_BRAND="<>"
   S_BRANCH=">"
   S_WARN="!"
-  S_PROMPT=">"
-  S_TIME=""
-  S_COST=""
   SEP=" | "
 elif [[ "$USE_NERDFONT" == "1" ]]; then
   S_BRAND="◆"
   S_BRANCH=" "
   S_WARN=" 󰀦"
-  S_PROMPT="❯"
-  S_TIME="󰔟 "
-  S_COST=" "
   if [[ "$USE_POWERLINE" == "1" ]]; then
     SEP="  "
   else
@@ -72,9 +64,6 @@ else
   S_BRAND="◆"
   S_BRANCH="⎇ "
   S_WARN=" ⚠"
-  S_PROMPT="❯"
-  S_TIME=""
-  S_COST=""
   if [[ "$USE_POWERLINE" == "1" ]]; then
     SEP="  "
   else
@@ -102,16 +91,12 @@ input=$(cat)
 parsed=$(echo "$input" | jq -r '
   (.model.display_name // ""),
   (.context_window.used_percentage // 0 | tostring),
-  (.cost.total_cost_usd // 0 | tostring),
   (.workspace.current_dir // "." | split("/") | last),
   (.worktree.branch // ""),
   (.rate_limits.five_hour.used_percentage // -1 | tostring),
   (.rate_limits.seven_day.used_percentage // -1 | tostring),
   (.agent.name // ""),
   (.workspace.current_dir // "."),
-  (.cost.total_lines_added // 0 | tostring),
-  (.cost.total_lines_removed // 0 | tostring),
-  (.cost.total_duration_ms // 0 | tostring),
   (.context_window.context_window_size // 0 | tostring),
   (.worktree.name // ""),
   "END"
@@ -120,16 +105,12 @@ parsed=$(echo "$input" | jq -r '
 {
   IFS= read -r model_name
   IFS= read -r ctx_pct
-  IFS= read -r cost
   IFS= read -r dir
   IFS= read -r branch
   IFS= read -r rate5h
   IFS= read -r rate7d
   IFS= read -r agent_name
   IFS= read -r cwd_full
-  IFS= read -r lines_add
-  IFS= read -r lines_rm
-  IFS= read -r duration_ms
   IFS= read -r ctx_size
   IFS= read -r wt_name
   IFS= read -r _sentinel
@@ -172,7 +153,8 @@ fi
 # Git branch and dirty marker (cached)
 # ═══════════════════════════════════════════════════════════════
 
-GIT_CACHE="/tmp/claude-statusline-git-cache"
+# One cache file per directory, so parallel sessions in different repos don't mix
+GIT_CACHE="/tmp/claude-statusline-git-cache-$(printf '%s' "${cwd_full:-.}" | shasum | cut -c1-12)"
 GIT_CACHE_MAX_AGE=5
 
 git_branch="${branch:-}"
@@ -220,21 +202,17 @@ rate_section=""
 rate5h_int=${rate5h%.*}; rate5h_int=${rate5h_int:-0}
 rate7d_int=${rate7d%.*}; rate7d_int=${rate7d_int:-0}
 
+# Formats one rate limit, "─" when unknown (-1)
+format_rate() {
+  local value=$1
+  if (( value < 0 )); then printf '%s' "${GRAY}─${RST}"
+  elif (( value >= 80 )); then printf '%s' "${RED}${value}%${RST}"
+  else printf '%s' "${GRAY}${value}%${RST}"; fi
+}
+
 if (( rate5h_int >= 0 || rate7d_int >= 0 )); then
-  if (( rate5h_int >= 80 )); then rate5h_str="${RED}${rate5h_int}%${RST}"
-  else rate5h_str="${GRAY}${rate5h_int}%${RST}"; fi
-  if (( rate7d_int >= 80 )); then rate7d_str="${RED}${rate7d_int}%${RST}"
-  else rate7d_str="${GRAY}${rate7d_int}%${RST}"; fi
-  rate_section="${SEP}${rate5h_str} / ${rate7d_str}"
+  rate_section="${SEP}$(format_rate "$rate5h_int") / $(format_rate "$rate7d_int")"
 fi
-
-# ═══════════════════════════════════════════════════════════════
-# Dynamic prompt (color tied to context usage)
-# ═══════════════════════════════════════════════════════════════
-
-if (( pct_int >= 90 )); then prompt_color="$RED"
-elif (( pct_int >= 70 )); then prompt_color="$YELLOW"
-else prompt_color="$GREEN"; fi
 
 # ═══════════════════════════════════════════════════════════════
 # Assemble line 1

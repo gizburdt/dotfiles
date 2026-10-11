@@ -1,16 +1,13 @@
 # Load Composer tools
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-# Load Node global installed binaries
-export PATH="$HOME/.node/bin:$PATH"
-
-# Use project specific binaries before global ones
-export PATH="node_modules/.bin:vendor/bin:$PATH"
+# Project specific binaries, appended so a repo can't shadow system commands
+export PATH="$PATH:node_modules/.bin:vendor/bin"
 
 # Local
 export PATH="$HOME/.local/bin:$PATH"
 
 # MySQL
-herd_mysql_bin=$(ls -d /Users/Shared/Herd/services/mysql/*/bin 2>/dev/null | sort -V | tail -1)
-[ -n "$herd_mysql_bin" ] && export PATH="$herd_mysql_bin:$PATH"
-unset herd_mysql_bin
+yerd_mysql_bin=$(ls -d "$HOME/Library/Application Support/io.yerd.Yerd/services/mysql/"*/bin 2>/dev/null | sort -V | tail -1)
+[ -n "$yerd_mysql_bin" ] && export PATH="$yerd_mysql_bin:$PATH"
+unset yerd_mysql_bin

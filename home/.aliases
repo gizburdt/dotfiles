@@ -9,10 +9,6 @@ alias fdns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias cdot="cd ~/.dotfiles"
 alias edot="sublime ~/.dotfiles"
 
-# PHP
-alias composer="herd composer"
-alias php="herd php"
-
 # Short
 alias cl="claude"
 alias a="php artisan"
@@ -61,8 +57,8 @@ alias cffi="rm -rf vendor/ composer.lock && composer install --ignore-platform-r
 # Pest
 alias pp="pest --parallel --order-by random"
 alias pps="pest --parallel --order-by random --stop-on-error"
-alias pc="herd coverage ./vendor/bin/pest --coverage"
-alias pcr="herd coverage ./vendor/bin/pest --coverage-html reports/"
+alias pc="yerd coverage ./vendor/bin/pest --coverage"
+alias pcr="yerd coverage ./vendor/bin/pest --coverage-html reports/"
 alias pcro="open reports/index.html"
 
 # Docker
@@ -71,10 +67,8 @@ alias dcd="docker compose down"
 
 # NPM
 alias ni="npm install"
-alias nrp="npm run production"
 alias nrb="npm run build"
-alias nrw="nrp && npm run watch --quiet-deps"
-alias nrd="nrb && npm run dev --quiet-deps"
+alias nrd="npm run dev --quiet-deps"
 alias nrs="npm run start"
 alias nrsd="npm run start:dev"
 alias nf="rm -rf node_modules/ package-lock.json && npm install"

@@ -9,8 +9,9 @@ sudo -v
 echo "Setting up this Mac..."
 
 # Install Oh My Zsh
-if ! command -v omz >/dev/null 2>&1; then
-    /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
+# (don't start zsh or touch .zshrc, it's symlinked below)
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    RUNZSH=no KEEP_ZSHRC=yes /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
 
 # Install Homebrew
@@ -26,9 +27,6 @@ rm -f $HOME/.zshrc $HOME/.mackup.cfg
 ln -s $HOME/.dotfiles/home/.zshrc $HOME/.zshrc
 ln -s $HOME/.dotfiles/home/.mackup.cfg $HOME/.mackup.cfg
 
-# ZSH as default
-chsh -s $(which zsh)
-
 # Git
 touch $HOME/.gitconfig
 git config --global user.name "$fullName"
@@ -39,6 +37,9 @@ git config --global init.defaultBranch master
 # Homebrew dependencies
 brew update
 brew bundle --file=$HOME/.dotfiles/lib/Brewfile --verbose
+
+# ZSH as default (Homebrew version, must be listed in /etc/shells)
+chsh -s "$(brew --prefix)/bin/zsh"
 
 # Global Composer packages
 composer global require laravel/installer cpx/cpx

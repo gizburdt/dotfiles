@@ -17,6 +17,9 @@ ln -sf "$HOME/.dotfiles/home/claude/skills" ~/.claude/skills
 rm -rf ~/.claude/agents
 ln -sf "$HOME/.dotfiles/home/claude/agents" ~/.claude/agents
 
+# MCP servers
+claude mcp add --scope user yerd -- yerd mcp
+
 # Marketplaces
 claude plugin marketplace add laravel/claude-code
 claude plugin marketplace add JuliusBrussee/caveman

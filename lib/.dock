@@ -28,7 +28,7 @@ function clear_dock {
 
 # Reset macOS Dock to default settings
 function reset_dock {
-    defaults write com.apple.dock; killall Dock
+    defaults delete com.apple.dock; killall Dock
 }
 
 # Clear

@@ -25,3 +25,11 @@ source $ZSH/oh-my-zsh.sh
 ###############################################################################
 # Extra                                                                       #
 ###############################################################################
+
+# >>> yerd PATH >>>
+case ":$PATH:" in
+  *":$HOME/Library/Application Support/io.yerd.Yerd/bin:"*) ;;
+  *) export PATH="$HOME/Library/Application Support/io.yerd.Yerd/bin:$PATH" ;;
+esac
+export PHPRC="$HOME/Library/Application Support/io.yerd.Yerd/php-cli.ini"
+# <<< yerd PATH <<<
