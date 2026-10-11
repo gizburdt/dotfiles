@@ -6,6 +6,9 @@ read -p "What is the name of this computer? " computerName
 
 sudo -v
 
+# Keep-alive: update existing `sudo` time stamp until this script has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 echo "Setting up this Mac..."
 
 # Install Oh My Zsh
@@ -60,4 +63,4 @@ source $HOME/.dotfiles/lib/.claude-code
 source $HOME/.dotfiles/lib/.dock
 
 # macOS
-source $HOME/.dotfiles/lib/.macos $computerName
+source $HOME/.dotfiles/lib/.macos "$computerName"

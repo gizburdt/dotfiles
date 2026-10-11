@@ -3,5 +3,5 @@ code() { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args "$@" ;}
 
 # Commit
 commit() {
-    git add -A && git commit -m "$*"
+    git add -u && git commit -m "$*"
 }
