@@ -1,7 +1,10 @@
 .DS_Store
 .idea/
 .vscode/
-.claude/
 
-# Project
+# Claude
+.claude/
 home/claude/skills/synced/
+
+# Yerd
+*.yerd.bak
