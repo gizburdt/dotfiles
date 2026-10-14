@@ -68,7 +68,8 @@
     "playwright@claude-plugins-official": true,
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "caveman@caveman": true
+    "caveman@caveman": true,
+    "claude-seo@agricidaniel-claude-seo": true
   },
   "extraKnownMarketplaces": {
     "laravel": {
@@ -84,10 +85,16 @@
         "repo": "JuliusBrussee/caveman"
       },
       "autoUpdate": true
+    },
+    "agricidaniel-claude-seo": {
+      "source": {
+        "source": "github",
+        "repo": "AgriciDaniel/claude-seo"
+      }
     }
   },
   "alwaysThinkingEnabled": true,
+  "switchModelsOnFlag": true,
   "agentPushNotifEnabled": false,
-  "skipAutoPermissionPrompt": true,
-  "switchModelsOnFlag": true
+  "skipAutoPermissionPrompt": true
 }
