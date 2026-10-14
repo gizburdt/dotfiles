@@ -12,7 +12,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 echo "Setting up this Mac..."
 
 # Install Oh My Zsh
-# (don't start zsh or touch .zshrc, it's symlinked below)
+# (don't start zsh or touch .zshrc, it's created below)
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     RUNZSH=no KEEP_ZSHRC=yes /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/HEAD/tools/install.sh)"
 fi
@@ -26,9 +26,14 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 # Symlinks
-rm -f $HOME/.zshrc $HOME/.mackup.cfg
-ln -s $HOME/.dotfiles/home/.zshrc $HOME/.zshrc
+rm -f $HOME/.mackup.cfg
 ln -s $HOME/.dotfiles/home/.mackup.cfg $HOME/.mackup.cfg
+
+# ~/.zshrc is a local, untracked file so tools can inject into it
+if [ ! -f $HOME/.zshrc ] || [ -L $HOME/.zshrc ]; then
+    rm -f $HOME/.zshrc
+    echo 'source "$HOME/.dotfiles/home/.zshrc"' > $HOME/.zshrc
+fi
 
 # Git
 touch $HOME/.gitconfig
