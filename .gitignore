@@ -4,7 +4,6 @@
 
 # Claude
 .claude/
-home/claude/skills/synced/
 
 # Yerd
 *.yerd.bak
