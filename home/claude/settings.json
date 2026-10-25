@@ -96,5 +96,6 @@
   "alwaysThinkingEnabled": true,
   "switchModelsOnFlag": true,
   "agentPushNotifEnabled": false,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "inputNeededNotifEnabled": false
 }

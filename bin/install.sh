@@ -29,6 +29,16 @@ fi
 rm -f $HOME/.mackup.cfg
 ln -s $HOME/.dotfiles/home/.mackup.cfg $HOME/.mackup.cfg
 
+# SSH config
+mkdir -p $HOME/.ssh && chmod 700 $HOME/.ssh
+rm -f $HOME/.ssh/config
+ln -s $HOME/.dotfiles/home/ssh/config $HOME/.ssh/config
+
+# Store the key passphrase in the Keychain (prompts once)
+if [ -f $HOME/.ssh/id_rsa ]; then
+    ssh-add --apple-use-keychain $HOME/.ssh/id_rsa
+fi
+
 # ~/.zshrc is a local, untracked file so tools can inject into it
 if [ ! -f $HOME/.zshrc ] || [ -L $HOME/.zshrc ]; then
     rm -f $HOME/.zshrc
