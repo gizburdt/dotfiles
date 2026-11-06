@@ -52,7 +52,7 @@
       "mcp__plugin_context7_context7__*",
       "mcp__plugin_playwright_playwright__*"
     ],
-    "defaultMode": "default"
+    "defaultMode": "auto"
   },
   "model": "sonnet",
   "statusLine": {
