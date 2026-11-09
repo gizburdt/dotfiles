@@ -60,7 +60,6 @@
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "laravel-simplifier@laravel": true,
     "superpowers@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
     "chrome-devtools-mcp@claude-plugins-official": true,
@@ -69,7 +68,8 @@
     "security-guidance@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "caveman@caveman": true,
-    "claude-seo@agricidaniel-claude-seo": true
+    "claude-seo@agricidaniel-claude-seo": true,
+    "impeccable@impeccable": true
   },
   "extraKnownMarketplaces": {
     "laravel": {
@@ -91,11 +91,17 @@
         "source": "github",
         "repo": "AgriciDaniel/claude-seo"
       }
+    },
+    "impeccable": {
+      "source": {
+        "source": "github",
+        "repo": "pbakaus/impeccable"
+      }
     }
   },
   "alwaysThinkingEnabled": true,
   "switchModelsOnFlag": true,
+  "inputNeededNotifEnabled": false,
   "agentPushNotifEnabled": false,
-  "skipAutoPermissionPrompt": true,
-  "inputNeededNotifEnabled": false
+  "skipAutoPermissionPrompt": true
 }
