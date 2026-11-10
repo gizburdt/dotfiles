@@ -45,3 +45,6 @@ _ide_helper*
 
 # Other
 meili_data/
+
+# Understand-Anything
+.ua/

@@ -70,7 +70,8 @@
     "caveman@caveman": true,
     "claude-seo@agricidaniel-claude-seo": true,
     "impeccable@impeccable": true,
-    "ponytail@ponytail": true
+    "ponytail@ponytail": true,
+    "understand-anything@understand-anything": true
   },
   "extraKnownMarketplaces": {
     "laravel": {
@@ -105,6 +106,13 @@
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
+      },
+      "autoUpdate": true
+    },
+    "understand-anything": {
+      "source": {
+        "source": "github",
+        "repo": "Egonex-AI/Understand-Anything"
       },
       "autoUpdate": true
     }
