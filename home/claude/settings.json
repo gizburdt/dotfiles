@@ -91,13 +91,15 @@
       "source": {
         "source": "github",
         "repo": "AgriciDaniel/claude-seo"
-      }
+      },
+      "autoUpdate": true
     },
     "impeccable": {
       "source": {
         "source": "github",
         "repo": "pbakaus/impeccable"
-      }
+      },
+      "autoUpdate": true
     },
     "ponytail": {
       "source": {
