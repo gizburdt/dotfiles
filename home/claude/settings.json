@@ -69,7 +69,8 @@
     "skill-creator@claude-plugins-official": true,
     "caveman@caveman": true,
     "claude-seo@agricidaniel-claude-seo": true,
-    "impeccable@impeccable": true
+    "impeccable@impeccable": true,
+    "ponytail@ponytail": true
   },
   "extraKnownMarketplaces": {
     "laravel": {
@@ -97,6 +98,13 @@
         "source": "github",
         "repo": "pbakaus/impeccable"
       }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      },
+      "autoUpdate": true
     }
   },
   "alwaysThinkingEnabled": true,
