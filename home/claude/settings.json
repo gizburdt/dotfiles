@@ -69,7 +69,9 @@
     "skill-creator@claude-plugins-official": true,
     "caveman@caveman": true,
     "claude-seo@agricidaniel-claude-seo": true,
-    "impeccable@impeccable": true
+    "impeccable@impeccable": true,
+    "ponytail@ponytail": true,
+    "understand-anything@understand-anything": true
   },
   "extraKnownMarketplaces": {
     "laravel": {
@@ -90,13 +92,29 @@
       "source": {
         "source": "github",
         "repo": "AgriciDaniel/claude-seo"
-      }
+      },
+      "autoUpdate": true
     },
     "impeccable": {
       "source": {
         "source": "github",
         "repo": "pbakaus/impeccable"
-      }
+      },
+      "autoUpdate": true
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      },
+      "autoUpdate": true
+    },
+    "understand-anything": {
+      "source": {
+        "source": "github",
+        "repo": "Egonex-AI/Understand-Anything"
+      },
+      "autoUpdate": true
     }
   },
   "alwaysThinkingEnabled": true,
