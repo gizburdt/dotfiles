@@ -67,7 +67,6 @@
     "caveman@caveman": true,
     "claude-seo@agricidaniel-claude-seo": true,
     "impeccable@impeccable": true,
-    "ponytail@ponytail": true,
     "understand-anything@understand-anything": true
   },
   "extraKnownMarketplaces": {
@@ -96,13 +95,6 @@
       "source": {
         "source": "github",
         "repo": "pbakaus/impeccable"
-      },
-      "autoUpdate": true
-    },
-    "ponytail": {
-      "source": {
-        "source": "github",
-        "repo": "DietrichGebert/ponytail"
       },
       "autoUpdate": true
     },

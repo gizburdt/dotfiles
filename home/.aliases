@@ -76,5 +76,6 @@ alias nf="rm -rf node_modules/ package-lock.json && npm install"
 # Git
 alias push="git push"
 alias pull="git pull"
+alias fetch="git fetch"
 alias wip="commit wip"
 alias wipp="commit wip && push"
